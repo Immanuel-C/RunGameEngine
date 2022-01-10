@@ -1,8 +1,8 @@
 # RunGameEngine
 
-A simple low level game engine using OpenGL and GLFW for Window only.
+A simple low level game engine using OpenGL and GLFW for **Window only**.
 
-Features:
+**Features:**
 
 - Texture Rendering
 - Cameras (Unfinished) 
@@ -12,7 +12,7 @@ Features:
 
 If you find any bugs please report them using the issue tab
 
-How to build:
+**How to build:**
 
 The Run game engine is using the MSVC compiler. 
 
