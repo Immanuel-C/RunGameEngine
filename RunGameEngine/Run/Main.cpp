@@ -1,16 +1,11 @@
 // Run
 #include "RunInclude.h"
 
-//std
-#include <memory>
-
 
 int main(void)
 {
-
-
     /* Create a windowed mode window and its OpenGL context */
-    Window window(800, 600, "Run Game Engine Example", nullptr, nullptr);
+    Window window = Window(800, 600, "Run Game Engine Example", nullptr, nullptr);
 
     Renderer renderer;
 
@@ -68,7 +63,8 @@ int main(void)
         };
 
         triangles[2] = renderer.createShape(NDCvertices, NDCindices, LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), LoadFile::loadTexture("Res/Textures/container.jpg"));
-    }    {
+    }    
+    {
         std::vector<float> NDCvertices =
         {
             // positions    // texture coords
@@ -82,7 +78,8 @@ int main(void)
         };
 
         triangles[3] = renderer.createShape(NDCvertices, NDCindices, LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), LoadFile::loadTexture("Res/Textures/wall.jpg"));
-    }    {
+    }    
+    {
         std::vector<float> NDCvertices =
         {
             // positions    // texture coords
@@ -157,7 +154,6 @@ int main(void)
 
         triangles[8] = renderer.createShape(NDCvertices, NDCindices, LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), LoadFile::loadTexture("Res/Textures/Lake.jpg"));
     }
-    
     {
         std::vector<float> NDCvertices =
         {
@@ -172,8 +168,7 @@ int main(void)
         };
 
         triangles[9] = renderer.createShape(NDCvertices, NDCindices, LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), LoadFile::loadTexture("Res/Textures/Forest.jpg"));
-    }
-    
+    }  
     {
         std::vector<float> NDCvertices =
         {
@@ -188,23 +183,38 @@ int main(void)
         };
 
         triangles[10] = renderer.createShape(NDCvertices, NDCindices, LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), LoadFile::loadTexture("Res/Textures/wall.jpg"));
+    }    
+    {
+        std::vector<float> NDCvertices =
+        {
+            // positions    // texture coords
+             -1000.0f, -100.0f,  1.0f, 0.0f,   // bottom right
+             -1050.0f, 500.0f,  0.5f, 1.0f,   // top 
+             -500.0f, 10.0f,  0.0f, 0.0f,   // bottom left
+        };
+
+        std::vector<unsigned int> NDCindices = {  // note that we start from 0!
+            0, 1, 2,   // first triangle
+        };
+
+        triangles[10] = renderer.createShape(NDCvertices, NDCindices, LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), LoadFile::loadTexture("Res/Textures/wall.jpg"));
     }
 
     int isWireframe = GL_FILL;
 
-    soundManager.play("Res/Audio/bell.wav");
+    soundManager.play("Res/Audio/explosion.wav");
 
     /* Loop until the user closes the window */
     while (!window.shouldClose())
     {
         window.setWindowColor(0.25f, 0.123f, 0.65f, 1.0f);
         
-        if (Input::isKeyPressed(GLFW_KEY_F1))
+        if (Input::isKeyPressed(Keys::F1))
         {
             isWireframe = GL_LINE;
         }
 
-        if (Input::isKeyPressed(GLFW_KEY_F2))
+        if (Input::isKeyPressed(Keys::F2))
         {
             isWireframe = GL_FILL;
         }

@@ -32,6 +32,4 @@ private:
 	glm::vec2 m_scale{1.0f, 1.0f};
 	float m_rotationDeg = 0.0f;
 	Camera m_camera;
-
-
 };

@@ -11,7 +11,7 @@ Texture LoadFile::loadTexture(const char* fileLocation)
 	unsigned char* data = stbi_load(fileLocation, &width, &height, &nrchannels, 0);
 
 	if (data == nullptr)
-		printf("TEXTURE: FAILED TO LOAD TEXTURE AT %s\n", fileLocation);
+		printf("TEXTURE ERROR: FAILED TO LOAD TEXTURE AT %s\n", fileLocation);
 
 	return Texture(data, width, height, nrchannels);
 }
@@ -44,7 +44,7 @@ Shader LoadFile::loadShader(const char* vertexShaderFileLocation, const char* fr
     }
     catch (std::ifstream::failure e)
     {
-        std::cout << "IFSTREAM ERROR: FAILED TO LOAD SHADER!";
+        std::cout << "INPUT FILE STREAM ERROR: FAILED TO LOAD SHADER!";
     }
 
 

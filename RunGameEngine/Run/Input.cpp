@@ -44,7 +44,7 @@ glm::vec2 Input::getMousePos()
     return m_mousePos;
 }
 
-bool Input::isKeyPressed(int key)
+bool Input::isKeyPressed(uint16_t key)
 {
     if (key >= 1024)
         return false;
@@ -52,7 +52,7 @@ bool Input::isKeyPressed(int key)
     return m_keys[key];
 }
 
-bool Input::isMouseButtonPressed(int button)
+bool Input::isMouseButtonPressed(uint16_t button)
 {
     if (button >= 32)
         return false;

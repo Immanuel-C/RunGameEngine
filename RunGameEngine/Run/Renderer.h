@@ -41,6 +41,5 @@ private:
 
 	int m_lenVertices;
 	int m_lenIndices;
-
 };
 

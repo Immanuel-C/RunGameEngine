@@ -89,6 +89,3 @@ void Shape::setCamera(Camera camera)
 	glUniformMatrix4fv(glGetUniformLocation(m_shader, "view"), 1, GL_FALSE, glm::value_ptr(m_camera.getViewMat()));
 	glUniformMatrix4fv(glGetUniformLocation(m_shader, "projection"), 1, GL_FALSE, glm::value_ptr(m_camera.getProjectionMat()));
 }
-
-
-

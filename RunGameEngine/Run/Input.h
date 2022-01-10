@@ -8,8 +8,8 @@ class Input
 public:
 	Input(Window window);
 
-	static bool isKeyPressed(int key);
-	static bool isMouseButtonPressed(int button);
+	static bool isKeyPressed(uint16_t key);
+	static bool isMouseButtonPressed(uint16_t button);
 	static glm::vec2 getMousePos();
 private:
 	static bool m_keys[1024];
