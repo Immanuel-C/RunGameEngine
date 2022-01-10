@@ -99,9 +99,9 @@ Window::Window(float w, float h, const char* title, GLFWmonitor* monitor, GLFWwi
     glViewport(0, 0, w, h);
     
     // Debug mode
-    glEnable(GL_DEBUG_OUTPUT);
-    glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
-    glDebugMessageCallback(errorCallback, (void*)m_window);
+    //glEnable(GL_DEBUG_OUTPUT);
+    //glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
+    //glDebugMessageCallback(errorCallback, (void*)m_window);
 }
 
 GLFWwindow* Window::getGlfwWindow()
