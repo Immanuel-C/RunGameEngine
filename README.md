@@ -18,7 +18,7 @@ The Run game engine is using the **MSVC** compiler.
 
 **Make sure you have all the irrKlang .dll files and the Res folder in the Application build directory.** It should already be in the debug compile location.
 
-To build you need to make sure you **right click on the RunGameEngine project and then click build**. If you dont. The .lib file and the header files may be mismatched
+To build, you need to make sure you **right click on the RunGameEngine project and then click build and then press run. Every time you change the files in the game engine you must do the previous instructions**. If you dont The .lib file and the header files may be mismatched and you will get a linking error.
 
 **All the libraries I am using for the game engine**
 
