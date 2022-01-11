@@ -89,9 +89,6 @@
     <ClInclude Include="Run\Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Run\Core.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Run\EntryPoint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
