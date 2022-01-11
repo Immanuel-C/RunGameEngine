@@ -47,6 +47,15 @@ void Renderer::draw(Shape shape)
 	}
 }
 
+Renderer::~Renderer()
+{
+	glDeleteBuffers(1, &m_VAO);
+	glDeleteBuffers(1, &m_VBO);
+	glDeleteBuffers(1, &m_EBO);
+	glDeleteBuffers(1, &m_shader);
+	glDeleteBuffers(1, &m_texture);
+}
+
 void Renderer::createShader(std::string vs_Shader, std::string fs_Shader)
 {
 	int success;

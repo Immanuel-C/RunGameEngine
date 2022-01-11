@@ -113,7 +113,6 @@
     <ClInclude Include="Run\Shape.h" />
     <ClInclude Include="Run\Texture.h" />
     <ClInclude Include="Run\TranslateInput.h" />
-    <ClInclude Include="Run\Vector.h" />
     <ClInclude Include="Run\Window.h" />
     <ClInclude Include="Run\Shader.h" />
     <ClInclude Include="Run\SoundManager.h" />

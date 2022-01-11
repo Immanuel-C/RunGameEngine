@@ -4,7 +4,7 @@ class Game : public Application // Replace name with your game name
 {
 public:
 
-    Window window = Window(800, 600, "Run Game Engine Example", nullptr, nullptr);
+    Window window = Window(1280, 720, "Run Game Engine Example", nullptr, nullptr);
 
     Renderer renderer;
     
@@ -35,6 +35,8 @@ public:
 
     }
 
+    bool isFullscreen = false;
+
     // Do not set the windowColor after you draw any shapes!
     void run()
     {
@@ -48,9 +50,16 @@ public:
                 window.destroy();
                 break;
             }
+            if (Input::isKeyPressed(Keys::F11))
+            {
+                isFullscreen = !isFullscreen;
+            }
             
+            window.setFullscreen(isFullscreen); // Fullscreen mode is still a bit buggy 
+
             // Render here:
             triangle.setCamera(camera);
+            triangle.setRotation(glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
             renderer.draw(triangle);
 
             window.doBackEndStuff();
@@ -59,7 +68,10 @@ public:
 
 	~Game()
 	{
+        // Make sure to destroy anything if it has a destructor!
+        camera.~Camera();
         soundManager.~SoundManager();
+        renderer.~Renderer();
         window.destroy();
 	}
 };

@@ -11,6 +11,7 @@ class Camera
 public:
 	Camera(glm::vec3 position);
 	Camera();
+	~Camera();
 
 	glm::mat4 getViewMat();
 	glm::mat4 getProjectionMat();

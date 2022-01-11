@@ -24,6 +24,8 @@ class Renderer
 public:
 	Shape createShape(std::vector<float> vertices, std::vector<unsigned int> indices, Shader shader, Texture texture);
 	void draw(Shape shape);
+
+	~Renderer();
 private:
 	void createShader(std::string vs_shader, std::string fs_shader);
 	void createVBO(std::vector<float> vertices);

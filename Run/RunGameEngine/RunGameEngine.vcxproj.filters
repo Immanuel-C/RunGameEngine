@@ -56,9 +56,6 @@
     <ClInclude Include="Run\Input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Run\Vector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Run\Renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>

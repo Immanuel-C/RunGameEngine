@@ -10,6 +10,13 @@ Camera::Camera()
 
 }
 
+Camera::~Camera()
+{
+	m_cameraPos = glm::vec3(0.0f, 0.0f, 0.0f);
+	m_projectionMat = glm::mat4(1.0f);
+	m_viewMat = glm::mat4(1.0f);
+}
+
 glm::mat4 Camera::getViewMat()
 {
 	return m_viewMat;
