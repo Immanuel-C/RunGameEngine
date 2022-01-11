@@ -18,7 +18,7 @@ The Run game engine is using the **MSVC** compiler.
 
 **Make sure you have all the irrKlang .dll files and the Res folder in the Application build directory.** It should already be in the debug compile location.
 
-To build all you need to do is open the project in visual studio 2022 and run.
+To build you need to make sure you **right click on the RunGameEngine project and then click build**. If you dont. The .lib file and the header files may be mismatched
 
 **All the libraries I am using for the game engine**
 
