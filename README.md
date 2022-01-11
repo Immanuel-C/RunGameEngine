@@ -12,6 +12,11 @@ A simple low level, single threaded game engine using OpenGL and GLFW for **Wind
 
 If you find any bugs please report them using the issue tab
 
+**Requirments:**
+
+Run only supports graphics cards with the version 4.6 of OpenGL.
+
+
 **How to build:**
 
 The Run game engine is using the **MSVC** compiler.
