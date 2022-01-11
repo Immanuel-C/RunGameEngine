@@ -11,7 +11,7 @@ SoundManager::SoundManager()
     }
 }
 
-SoundManager::~SoundManager()
+void SoundManager::destroy()
 {
     m_engine->drop();
 }

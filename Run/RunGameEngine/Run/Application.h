@@ -9,7 +9,3 @@ public:
 	virtual void start();
 	virtual void run();
 };
-
-// define in client
-Application* CreateApplication();
-

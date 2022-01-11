@@ -47,7 +47,7 @@ void Renderer::draw(Shape shape)
 	}
 }
 
-Renderer::~Renderer()
+void Renderer::destroy()
 {
 	glDeleteBuffers(1, &m_VAO);
 	glDeleteBuffers(1, &m_VBO);

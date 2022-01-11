@@ -10,11 +10,11 @@ Camera::Camera()
 
 }
 
-Camera::~Camera()
+void Camera::destroy()
 {
-	m_cameraPos = glm::vec3(0.0f, 0.0f, 0.0f);
-	m_projectionMat = glm::mat4(1.0f);
-	m_viewMat = glm::mat4(1.0f);
+	m_cameraPos = glm::vec3(NULL, NULL, NULL);
+	m_projectionMat = glm::mat4(NULL);
+	m_viewMat = glm::mat4(NULL);
 }
 
 glm::mat4 Camera::getViewMat()

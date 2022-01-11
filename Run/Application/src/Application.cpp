@@ -69,14 +69,14 @@ public:
 	~Game()
 	{
         // Make sure to destroy anything if it has a destructor!
-        camera.~Camera();
-        soundManager.~SoundManager();
-        renderer.~Renderer();
+        camera.destroy();
+        soundManager.destroy();
+        renderer.destroy();
         window.destroy();
 	}
 };
 
 Application* CreateApplication()
 {
-	return new Game();
+	return new Game;
 }

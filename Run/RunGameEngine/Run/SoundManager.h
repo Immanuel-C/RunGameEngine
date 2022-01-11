@@ -13,7 +13,7 @@ class SoundManager
 {
 public:
 	SoundManager();
-	~SoundManager();
+	void destroy();
 	void play(const char* fileLocation);
 	void playLooped(const char* fileLocation);
 private:
