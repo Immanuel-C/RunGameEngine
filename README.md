@@ -4,11 +4,11 @@ A simple low level, single threaded game engine using OpenGL and GLFW for **Wind
 
 **Features:**
 
-- Texture Rendering with opengl
-- Cameras (Unfinished) with opengl
-- Input with glfw
-- Windowing System with glfw
-- Audio with irrklang
+- Texture Rendering with OpenGL
+- Cameras (Unfinished) with OpenGL
+- Input with GLFW
+- Windowing System with GLFW
+- Audio with IrrKlang
 
 If you find any bugs please report them using the issue tab
 
@@ -22,8 +22,12 @@ To build all you need to do is open the project in visual studio 2022 and run.
 
 **All the libraries I am using for the game engine**
 
-opengl,
-glad,
-glfw,
-glm,
-irrklang
+OpenGL,
+
+GLAD,
+
+GLFW,
+
+GLM,
+
+IrrKlang
