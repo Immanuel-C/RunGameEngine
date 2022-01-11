@@ -35,6 +35,7 @@ public:
 
     }
 
+    // Do not set the windowColor after you draw any shapes!
     void run()
     {
         /* Loop until the user closes the window */
@@ -48,6 +49,7 @@ public:
                 break;
             }
             
+            // Render here:
             triangle.setCamera(camera);
             renderer.draw(triangle);
 
