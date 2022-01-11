@@ -22,12 +22,8 @@ To build all you need to do is open the project in visual studio 2022 and run.
 
 **All the libraries I am using for the game engine**
 
-OpenGL,
-
-GLAD,
-
-GLFW,
-
-GLM,
-
-IrrKlang
+OpenGL, 
+GLAD, 
+GLFW, 
+GLM,  
+IrrKlang  
