@@ -145,20 +145,18 @@ void Window::destroy()
     glfwTerminate();
 }
 
-//void Window::setFullscreen(bool fullscreen)
-//{
-//    GLFWmonitor* monitor = glfwGetPrimaryMonitor();
-//    const GLFWvidmode* mode = glfwGetVideoMode(monitor);
-//
-//    
-//
-//    if (fullscreen) {
-//        glfwSetWindowMonitor(m_window, monitor, 0, 0, mode->width, mode->height, mode->refreshRate);
-//        glViewport(0, 0, mode->width, mode->height);
-//    }
-//
-//    if (!fullscreen) {
-//        glfwSetWindowMonitor(m_window, nullptr, 0, 0, m_width, m_height, GLFW_DONT_CARE);
-//        glViewport(0, 0, m_width, m_height);
-//    }
-//}
+void Window::setFullscreen(bool fullscreen)
+{
+    GLFWmonitor* monitor = glfwGetPrimaryMonitor();
+    const GLFWvidmode* mode = glfwGetVideoMode(monitor);
+
+    if (fullscreen) {
+        glfwSetWindowMonitor(m_window, monitor, 0, 0, mode->width, mode->height, mode->refreshRate);
+        glViewport(0, 0, mode->width, mode->height);
+    }
+
+    if (!fullscreen) {
+        glfwSetWindowMonitor(m_window, nullptr, 100, 100, m_width, m_height, GLFW_DONT_CARE);
+        glViewport(0, 0, m_width, m_height);
+    }
+}

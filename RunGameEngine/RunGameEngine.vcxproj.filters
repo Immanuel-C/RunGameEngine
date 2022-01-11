@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Run\Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Glad\glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -48,6 +45,9 @@
     <ClCompile Include="Run\SoundManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Run\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Run\Window.h">
@@ -74,7 +74,7 @@
     <ClInclude Include="Run\Shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Run\RunInclude.h">
+    <ClInclude Include="Run.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Run\Camera.h">
@@ -86,38 +86,14 @@
     <ClInclude Include="Run\TranslateInput.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Res\Textures\wall.jpg">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Res\Textures\OtherWall.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Res\Textures\container.jpg">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Res\Textures\WaterFall.jpg">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Res\Textures\Lake.jpg">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Res\Textures\Forest.jpg">
-      <Filter>Resource Files</Filter>
-    </Image>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Res\Shader\VertShader.glsl" />
-    <None Include="Res\Shader\FragShader.glsl" />
-    <None Include="Res\Audio\getout.ogg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="Res\Audio\bell.wav">
-      <Filter>Resource Files</Filter>
-    </Media>
-    <Media Include="Res\Audio\explosion.wav">
-      <Filter>Resource Files</Filter>
-    </Media>
+    <ClInclude Include="Run\Application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Run\Core.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Run\EntryPoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

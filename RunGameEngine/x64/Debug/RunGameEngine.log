@@ -1,4 +1,0 @@
-﻿  Main.cpp
-C:\Users\imman\source\repos\RunGameEngine\RunGameEngine\Run\Main.cpp(60,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\imman\source\repos\RunGameEngine\RunGameEngine\Run\Main.cpp(87,59): warning C4244: 'argument': conversion from 'uint64_t' to 'float', possible loss of data
-  RunGameEngine.vcxproj -> C:\Users\imman\source\repos\RunGameEngine\x64\Debug\RunGameEngine.exe

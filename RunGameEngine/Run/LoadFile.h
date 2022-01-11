@@ -2,7 +2,6 @@
 #include "Texture.h"
 #include "Shader.h"
 #include <fstream>
-#include <vector>
 #include <sstream>
 class LoadFile
 {

@@ -1,7 +1,7 @@
 // Run
-#include "RunInclude.h"
+#include "..\Run.h"
 
-int main(void)
+int DeprecatedMain(void)
 {
     /* Create a windowed mode window and its OpenGL context */
     Window window = Window(800, 600, "Run Game Engine Example", nullptr, nullptr);
@@ -63,9 +63,16 @@ int main(void)
         colours[i] = (float)(rand() % 256) / 256.0f;
     }
 
+    bool isFullscreen = false;
 
     while (!window.shouldClose())
     {
+        if (Input::isKeyPressed(Keys::Escape))
+        {
+            window.destroy();
+            break;
+        }
+
         window.setWindowColor(colours[0], colours[1], colours[2], 1.0f);
         
         if (Input::isMouseButtonPressed(MouseButtons::SideButton1))
@@ -77,9 +84,15 @@ int main(void)
         {
             isWireframe = GL_FILL;
         }
+
         glPolygonMode(GL_FRONT_AND_BACK, isWireframe);
 
-        //window.setFullscreen(isFullscreen);
+        if (Input::isKeyPressed(Keys::F11))
+        {
+            isFullscreen = !isFullscreen;
+        }
+
+        window.setFullscreen(isFullscreen);
 
         for (int i = 0; i < sizeOfTriangles; i++)
         {

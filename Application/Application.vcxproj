@@ -13,19 +13,19 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{49b60dbc-e961-4452-a2e7-d3e0d0a4952d}</ProjectGuid>
-    <RootNamespace>RunGameEngine</RootNamespace>
+    <ProjectGuid>{a279b7f8-6dd8-4fdd-9394-03c72d1a1970}</ProjectGuid>
+    <RootNamespace>Application</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -45,29 +45,29 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <TargetExt>.lib</TargetExt>
     <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)</OutDir>
     <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\$(ProjectName)</IntDir>
+    <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <TargetExt>.lib</TargetExt>
     <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)</OutDir>
     <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\$(ProjectName)</IntDir>
+    <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>RN_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Include\GLAD\include;$(SolutionDir)Include\IRRKLANG\include;$(SolutionDir)Include\STB;$(SolutionDir)Include\GLM;$(ProjectDir)Glad;$(SolutionDir)Include\GLFW\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)RunGameEngine;$(SolutionDir)Include\GLAD\include;$(SolutionDir)Include\IRRKLANG\include;$(SolutionDir)Include\STB;$(SolutionDir)Include\GLM;$(ProjectDir)Glad;$(SolutionDir)Include\GLFW\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Include\GLFW\lib;$(SolutionDir)Include\IRRKLANG\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>irrKlang.lib;opengl32.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Include\RUN;$(SolutionDir)Include\GLFW\lib;$(SolutionDir)Include\IRRKLANG\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>RunGameEngine.lib;irrKlang.lib;opengl32.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -76,48 +76,43 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>RN_BUILD_DLL;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Include\GLAD\include;$(SolutionDir)Include\IRRKLANG\include;$(SolutionDir)Include\STB;$(SolutionDir)Include\GLM;$(ProjectDir)Glad;$(SolutionDir)Include\GLFW\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)RunGameEngine;$(SolutionDir)Include\GLAD\include;$(SolutionDir)Include\IRRKLANG\include;$(SolutionDir)Include\STB;$(SolutionDir)Include\GLM;$(ProjectDir)Glad;$(SolutionDir)Include\GLFW\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Include\GLFW\lib;$(SolutionDir)Include\IRRKLANG\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>irrKlang.lib;opengl32.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Include\RUN;$(SolutionDir)Include\GLFW\lib;$(SolutionDir)Include\IRRKLANG\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>RunGameEngine.lib;irrKlang.lib;opengl32.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Run\Application.cpp" />
-    <ClCompile Include="Run\Camera.cpp" />
-    <ClCompile Include="Glad\glad.c" />
-    <ClCompile Include="Run\LoadFile.cpp" />
-    <ClCompile Include="Run\Renderer.cpp" />
-    <ClCompile Include="Run\Input.cpp" />
-    <ClCompile Include="Run\Shape.cpp" />
-    <ClCompile Include="Run\Texture.cpp" />
-    <ClCompile Include="Run\Window.cpp" />
-    <ClCompile Include="Run\Shader.cpp" />
-    <ClCompile Include="Run\SoundManager.cpp" />
+    <ClCompile Include="src\Application.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Run\Application.h" />
-    <ClInclude Include="Run\Camera.h" />
-    <ClInclude Include="Run\Core.h" />
-    <ClInclude Include="Run\EntryPoint.h" />
-    <ClInclude Include="Run\LoadFile.h" />
-    <ClInclude Include="Run\Renderer.h" />
-    <ClInclude Include="Run\Input.h" />
-    <ClInclude Include="Run.h" />
-    <ClInclude Include="Run\Shape.h" />
-    <ClInclude Include="Run\Texture.h" />
-    <ClInclude Include="Run\TranslateInput.h" />
-    <ClInclude Include="Run\Vector.h" />
-    <ClInclude Include="Run\Window.h" />
-    <ClInclude Include="Run\Shader.h" />
-    <ClInclude Include="Run\SoundManager.h" />
+    <ProjectReference Include="..\RunGameEngine\RunGameEngine.vcxproj">
+      <Project>{49b60dbc-e961-4452-a2e7-d3e0d0a4952d}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Res\Audio\bell.wav" />
+    <Media Include="Res\Audio\explosion.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Res\Audio\getout.ogg" />
+    <None Include="Res\Shader\FragShader.glsl" />
+    <None Include="Res\Shader\VertShader.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Res\Textures\container.jpg" />
+    <Image Include="Res\Textures\Forest.jpg" />
+    <Image Include="Res\Textures\Lake.jpg" />
+    <Image Include="Res\Textures\OtherWall.png" />
+    <Image Include="Res\Textures\wall.jpg" />
+    <Image Include="Res\Textures\WaterFall.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
