@@ -70,8 +70,12 @@
       <AdditionalDependencies>irrKlang.lib;opengl32.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>MOVE C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\RunGameEngine\RunGameEngine.lib C:\Users\imman\source\repos\RunGameEngine\Run\Include\RUN</Command>
+      <Command>MOVE $(SolutionDir)bin\$(Configuration)-$(Platform)\RunGameEngine\RunGameEngine.lib $(SolutionDir)Include\RUN\RunGameEngine</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -92,11 +96,15 @@
       <AdditionalDependencies>irrKlang.lib;opengl32.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>MOVE C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\RunGameEngine\RunGameEngine.lib C:\Users\imman\source\repos\RunGameEngine\Run\Include\RUN</Command>
+      <Command>MOVE $(SolutionDir)bin\$(Configuration)-$(Platform)\RunGameEngine\RunGameEngine.lib $(SolutionDir)Include\RUN\RunGameEngine</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Run\Application.cpp" />
+    <ClCompile Include="Run\RunApplication.cpp" />
     <ClCompile Include="Run\Camera.cpp" />
     <ClCompile Include="Glad\glad.c" />
     <ClCompile Include="Run\LoadFile.cpp" />
@@ -109,7 +117,7 @@
     <ClCompile Include="Run\SoundManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Run\Application.h" />
+    <ClInclude Include="Run\RunApplication.h" />
     <ClInclude Include="Run\Camera.h" />
     <ClInclude Include="Run\EntryPoint.h" />
     <ClInclude Include="Run\LoadFile.h" />

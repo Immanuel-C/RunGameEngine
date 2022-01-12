@@ -45,7 +45,7 @@
     <ClCompile Include="Run\SoundManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Run\Application.cpp">
+    <ClCompile Include="Run\RunApplication.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -83,7 +83,7 @@
     <ClInclude Include="Run\TranslateInput.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Run\Application.h">
+    <ClInclude Include="Run\RunApplication.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Run\EntryPoint.h">

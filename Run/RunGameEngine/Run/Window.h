@@ -6,7 +6,8 @@
 class Window
 {
 public:
-	Window(float w, float h, const char* title, GLFWmonitor* monitor, GLFWwindow* share);
+	Window(float w, float h, const char* title, GLFWmonitor* monitor, GLFWwindow* share, bool VsyncOn);
+	Window();
 	GLFWwindow* getGlfwWindow();
 	bool shouldClose();
 	void setWindowColor(float r, float g, float b, float a);

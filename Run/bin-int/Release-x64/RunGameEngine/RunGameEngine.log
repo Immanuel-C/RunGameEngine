@@ -1,0 +1,24 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(495,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(496,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  Application.cpp
+  Camera.cpp
+  LoadFile.cpp
+  Renderer.cpp
+C:\Users\imman\source\repos\RunGameEngine\Run\RunGameEngine\Run\Renderer.cpp(7,33): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\imman\source\repos\RunGameEngine\Run\RunGameEngine\Run\Renderer.cpp(8,31): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  Input.cpp
+  Shape.cpp
+  Texture.cpp
+  Window.cpp
+C:\Users\imman\source\repos\RunGameEngine\Run\RunGameEngine\Run\Window.cpp(81,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\imman\source\repos\RunGameEngine\Run\RunGameEngine\Run\Window.cpp(81,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\imman\source\repos\RunGameEngine\Run\RunGameEngine\Run\Window.cpp(99,25): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+C:\Users\imman\source\repos\RunGameEngine\Run\RunGameEngine\Run\Window.cpp(99,22): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+C:\Users\imman\source\repos\RunGameEngine\Run\RunGameEngine\Run\Window.cpp(159,68): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\imman\source\repos\RunGameEngine\Run\RunGameEngine\Run\Window.cpp(159,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\imman\source\repos\RunGameEngine\Run\RunGameEngine\Run\Window.cpp(160,35): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+C:\Users\imman\source\repos\RunGameEngine\Run\RunGameEngine\Run\Window.cpp(160,26): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+  Shader.cpp
+  SoundManager.cpp
+  glad.c
+  RunGameEngine.vcxproj -> C:\Users\imman\source\repos\RunGameEngine\Run\bin\Release-x64\RunGameEngine\RunGameEngine.lib

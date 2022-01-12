@@ -67,7 +67,7 @@ void GLAPIENTRY errorCallback(
 }
 
 
-Window::Window(float w, float h, const char* title, GLFWmonitor* monitor, GLFWwindow* share)
+Window::Window(float w, float h, const char* title, GLFWmonitor* monitor, GLFWwindow* share, bool VsyncOn)
 {
     /* Initialize the library */
     if (!glfwInit())
@@ -76,6 +76,9 @@ Window::Window(float w, float h, const char* title, GLFWmonitor* monitor, GLFWwi
     m_width = w;
     m_height = h;
 
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
+    glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
     /* Create a windowed mode window and its OpenGL context */
     m_window = glfwCreateWindow(w, h, title, monitor, share);
@@ -87,9 +90,10 @@ Window::Window(float w, float h, const char* title, GLFWmonitor* monitor, GLFWwi
     /* Make the window's context current */
     glfwMakeContextCurrent(m_window);
 
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
-    glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+    if (!VsyncOn)
+    {
+        glfwSwapInterval(0);
+    }
 
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
         glfwTerminate();
@@ -102,6 +106,13 @@ Window::Window(float w, float h, const char* title, GLFWmonitor* monitor, GLFWwi
     //glEnable(GL_DEBUG_OUTPUT);
     //glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
     //glDebugMessageCallback(errorCallback, (void*)m_window);
+}
+
+Window::Window()
+{
+    m_window = nullptr;
+    m_width = NULL;
+    m_height = NULL;
 }
 
 GLFWwindow* Window::getGlfwWindow()

@@ -1,11 +1,8 @@
 #include <Run.h>
 
-class Game : public Application // Replace name with your game name
+class Game : public RunApplication
 {
 public:
-
-    Window window = Window(1280, 720, "Run Game Engine Example", nullptr, nullptr);
-
     Renderer renderer;
     
     Camera camera = Camera(glm::vec3(0.0f, 0.0f, 0.0f));
@@ -25,11 +22,13 @@ public:
         0, 1, 2,   // first triangle
     };
     
-    void start()
+    void Start()
     {
+        window = Window(1280, 720, "Run Game Engine Example", nullptr, nullptr, false); // the last param is if Vsync is on 
+
         Input::Input(window);
 
-        soundManager.play("Res/Audio/explosion.wav");
+        soundManager.play("Res/Audio/getout.ogg");
 
         triangle = renderer.createShape(NDCvertices, NDCindices, LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), LoadFile::loadTexture("Res/Textures/Lake.jpg"));
 
@@ -38,35 +37,31 @@ public:
     bool isFullscreen = false;
 
     // Do not set the windowColor after you draw any shapes!
-    void run()
+    void Update(float dt)
     {
-        /* Loop until the user closes the window */
-        while (!window.shouldClose())
+        window.setWindowColor(0.5f, 0.25f, 0.1f, 1.0f);
+
+        if (Input::isKeyPressed(Keys::Escape))
         {
-            window.setWindowColor(0.5f, 0.25f, 0.1f, 1.0f);
-
-            if (Input::isKeyPressed(Keys::Escape))
-            {
-                window.destroy();
-                break;
-            }
-            if (Input::isKeyPressed(Keys::F11))
-            {
-                isFullscreen = !isFullscreen;
-            }
-            
-            window.setFullscreen(isFullscreen); // Fullscreen mode is still a bit buggy 
-
-            // Render here:
-            triangle.setCamera(camera);
-            triangle.setRotation(glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
-            renderer.draw(triangle);
-
-            window.doBackEndStuff();
+            window.destroy();
         }
+        if (Input::isKeyPressed(Keys::F11))
+        {
+            isFullscreen = !isFullscreen;
+        }
+        
+        window.setFullscreen(isFullscreen); // Fullscreen mode is still a bit buggy 
+
+
+        // Render here:
+        triangle.setCamera(camera);
+        triangle.setRotation(glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+        renderer.draw(triangle);
+
+        window.doBackEndStuff();
     }
 
-	~Game()
+	void End()
 	{
         // Make sure to destroy anything if it has a destructor!
         camera.destroy();
@@ -76,7 +71,7 @@ public:
 	}
 };
 
-Application* CreateApplication()
+RunApplication* CreateApplication()
 {
 	return new Game;
 }

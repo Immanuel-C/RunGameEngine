@@ -1,0 +1,31 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(495,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(496,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  Application.cpp
+C:\Users\imman\source\repos\RunGameEngine\Run\Application\src\Application.cpp(62,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+RunGameEngine.lib(LoadFile.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in Application.obj
+RunGameEngine.lib(LoadFile.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in Application.obj
+RunGameEngine.lib(LoadFile.obj) : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:ICF' specification
+RunGameEngine.lib(Renderer.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in Application.obj
+RunGameEngine.lib(Renderer.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in Application.obj
+RunGameEngine.lib(Camera.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in Application.obj
+RunGameEngine.lib(Camera.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in Application.obj
+RunGameEngine.lib(Window.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in Application.obj
+RunGameEngine.lib(Window.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in Application.obj
+RunGameEngine.lib(Input.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in Application.obj
+RunGameEngine.lib(Input.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in Application.obj
+RunGameEngine.lib(Shape.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in Application.obj
+RunGameEngine.lib(Shape.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in Application.obj
+RunGameEngine.lib(SoundManager.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in Application.obj
+RunGameEngine.lib(SoundManager.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in Application.obj
+RunGameEngine.lib(Texture.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in Application.obj
+RunGameEngine.lib(Texture.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in Application.obj
+RunGameEngine.lib(Shader.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in Application.obj
+RunGameEngine.lib(Shader.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in Application.obj
+LINK : warning LNK4098: defaultlib 'MSVCRTD' conflicts with use of other libs; use /NODEFAULTLIB:library
+RunGameEngine.lib(LoadFile.obj) : error LNK2001: unresolved external symbol __imp__invalid_parameter
+RunGameEngine.lib(Renderer.obj) : error LNK2001: unresolved external symbol __imp__invalid_parameter
+RunGameEngine.lib(Shader.obj) : error LNK2001: unresolved external symbol __imp__invalid_parameter
+RunGameEngine.lib(LoadFile.obj) : error LNK2001: unresolved external symbol __imp__CrtDbgReport
+RunGameEngine.lib(Renderer.obj) : error LNK2001: unresolved external symbol __imp__CrtDbgReport
+RunGameEngine.lib(Shader.obj) : error LNK2001: unresolved external symbol __imp__CrtDbgReport
+C:\Users\imman\source\repos\RunGameEngine\Run\bin\Release-x64\Application\Application.exe : fatal error LNK1120: 2 unresolved externals

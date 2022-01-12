@@ -1,11 +1,15 @@
-#include "Application.h"
+#include "RunApplication.h"
 
-extern Application* CreateApplication();
+#include <memory>
+
+extern RunApplication* CreateApplication();
+
 
 int main(int argc, char** argv)
 {
-	auto* app = CreateApplication();
-	app->start();
-	app->run();
+	RunApplication* app = CreateApplication();
+	app->Start();
+	app->Loop();
+	app->End();
 	delete app;
 }
