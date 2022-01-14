@@ -61,13 +61,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>RN_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Include\GLAD\include;$(SolutionDir)Include\IRRKLANG\include;$(SolutionDir)Include\STB;$(SolutionDir)Include\GLM;$(ProjectDir)Glad;$(SolutionDir)Include\GLFW\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Include\IMGUI\include;$(SolutionDir)Include\GLAD\include;$(SolutionDir)Include\IRRKLANG\include;$(SolutionDir)Include\STB;$(SolutionDir)Include\GLM;$(ProjectDir)Glad;$(SolutionDir)Include\GLFW\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Include\GLFW\lib;$(SolutionDir)Include\IRRKLANG\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>irrKlang.lib;opengl32.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Include\IMGUI;$(SolutionDir)Include\GLFW\lib;$(SolutionDir)Include\IRRKLANG\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>IMGUI.lib;irrKlang.lib;opengl32.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>MOVE $(SolutionDir)bin\$(Configuration)-$(Platform)\RunGameEngine\RunGameEngine.lib $(SolutionDir)Include\RUN\RunGameEngine</Command>
@@ -85,15 +85,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>RN_BUILD_DLL;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Include\GLAD\include;$(SolutionDir)Include\IRRKLANG\include;$(SolutionDir)Include\STB;$(SolutionDir)Include\GLM;$(ProjectDir)Glad;$(SolutionDir)Include\GLFW\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Include\IMGUI\include;$(SolutionDir)Include\GLAD\include;$(SolutionDir)Include\IRRKLANG\include;$(SolutionDir)Include\STB;$(SolutionDir)Include\GLM;$(ProjectDir)Glad;$(SolutionDir)Include\GLFW\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Include\GLFW\lib;$(SolutionDir)Include\IRRKLANG\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>irrKlang.lib;opengl32.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Include\IMGUI;$(SolutionDir)Include\GLFW\lib;$(SolutionDir)Include\IRRKLANG\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>IMGUI.lib;irrKlang.lib;opengl32.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>MOVE $(SolutionDir)bin\$(Configuration)-$(Platform)\RunGameEngine\RunGameEngine.lib $(SolutionDir)Include\RUN\RunGameEngine</Command>

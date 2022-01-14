@@ -30,13 +30,23 @@ public:
     {
         // Make sure to init the window before the camera
         window = std::make_shared<Window>(800, 600, "Run Game Engine Example", nullptr, nullptr, false); // the last param is if Vsync is on 
-        camera = Camera(0, window->getWidth(), 0, window->getHeight());
+        
+        IMGUI_CHECKVERSION();
+        ImGui::CreateContext();
+        ImGuiIO& io = ImGui::GetIO();
+        // Setup Platform/Renderer bindings
+        ImGui_ImplGlfw_InitForOpenGL(window->getGlfwWindow(), true);
+        ImGui_ImplOpenGL3_Init("#version 460");
+        // Setup Dear ImGui style
+        ImGui::StyleColorsDark();
+        
+        camera = Camera(-window->getWidth(), window->getWidth(), -window->getHeight(), window->getHeight());
 
         Input::Input(window);
 
-        soundManager->play("Res/Audio/getout.ogg");
+        //soundManager->play("Res/Audio/getout.ogg");
 
-        quad = renderer->createQuad(glm::vec2(400.0f, 300.0f), glm::vec2(50.0f, 50.0f), LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), LoadFile::loadTexture("Res/Textures/Lake.jpg"));
+        quad = renderer->createQuad(glm::vec2(0.0f, 0.0f), glm::vec2(150.0f, 150.0f), LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), LoadFile::loadTexture("Res/Textures/Lake.jpg"));
         //triangle = renderer->createShape(NDCvertices, NDCindices, LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), LoadFile::loadTexture("Res/Textures/Lake.jpg"));
     }
 
@@ -44,7 +54,7 @@ public:
 
     void controlShape(Shape shape, float dt)
     {
-        float movementSpeed = 1000.0f;
+        float movementSpeed = 10.0f;
 
         if (Input::isKeyPressed(Keys::W) || Input::isKeyPressed(Keys::ArrowUp))
         {
@@ -77,6 +87,10 @@ public:
     void Update(float dt) override
     {
         window->setWindowColor(0.5f, 0.25f, 0.1f, 1.0f);
+        
+        ImGui_ImplOpenGL3_NewFrame();
+        ImGui_ImplGlfw_NewFrame();
+        ImGui::NewFrame();
 
         if (Input::isKeyPressed(Keys::Escape))
         {
@@ -92,6 +106,9 @@ public:
         window.setFullscreen(isFullscreen); // Fullscreen mode is still a bit buggy 
         */
 
+        ImGui::Render();
+        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
         // Render here:
         quad.setCamera(camera);
         controlShape(quad, dt);
@@ -101,8 +118,6 @@ public:
 
         //triangle.setCamera(camera);
         //renderer->draw(triangle);
-
-
 
         window->doBackEndStuff();
     }
@@ -117,6 +132,12 @@ public:
         camera.destroy();
         soundManager->destroy();
         renderer->destroy();
+
+        //ImGui
+        ImGui_ImplOpenGL3_Shutdown();
+        ImGui_ImplGlfw_Shutdown();
+        ImGui::DestroyContext();
+
 
         // Call the destructor for window after every other destructor because the window destructor also terminates glfw 
         window->destroy();

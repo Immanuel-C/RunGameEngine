@@ -1,0 +1,46 @@
+﻿Build started 2022-01-14 2:47:06 PM.
+Logging verbosity is set to: Normal.     1>Project "C:\Users\imman\source\repos\RunGameEngine\Run\IMGUI\IMGUI.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(495,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+     1>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(496,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+         Creating directory "C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\IMGUI\".
+         Creating directory "C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\IMGUI\IMGUI.tlog\".
+     1>InitializeBuildStatus:
+         Creating "C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\IMGUI\IMGUI.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\bin\HostX64\x64\CL.exe /c /IC:\Users\imman\source\repos\RunGameEngine\Run\Include\GLFW\include /ZI /JMC /nologo /W3 /WX- /diagnostics:column /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /permissive- /Fo"C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\IMGUI\\" /Fd"C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\IMGUI\IMGUI.pdb" /external:W3 /Gd /TP /FC /errorReport:prompt src\imgui.cpp src\imgui_demo.cpp src\imgui_draw.cpp src\imgui_impl_glfw.cpp src\imgui_impl_opengl3.cpp src\imgui_tables.cpp src\imgui_widgets.cpp
+         imgui.cpp
+         imgui_demo.cpp
+         imgui_draw.cpp
+         imgui_impl_glfw.cpp
+         imgui_impl_opengl3.cpp
+         imgui_tables.cpp
+         imgui_widgets.cpp
+         Generating Code...
+       Lib:
+         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\bin\HostX64\x64\Lib.exe /OUT:"C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\IMGUI\IMGUI.lib" /NOLOGO /MACHINE:X64 "C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\IMGUI\imgui.obj"
+         "C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\IMGUI\imgui_demo.obj"
+         "C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\IMGUI\imgui_draw.obj"
+         "C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\IMGUI\imgui_impl_glfw.obj"
+         "C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\IMGUI\imgui_impl_opengl3.obj"
+         "C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\IMGUI\imgui_tables.obj"
+         "C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\IMGUI\imgui_widgets.obj"
+         IMGUI.vcxproj -> C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\IMGUI\IMGUI.lib
+       FinalizeBuildStatus:
+         Deleting file "C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\IMGUI\IMGUI.tlog\unsuccessfulbuild".
+         Touching "C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\IMGUI\IMGUI.tlog\IMGUI.lastbuildstate".
+     1>Done Building Project "C:\Users\imman\source\repos\RunGameEngine\Run\IMGUI\IMGUI.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+       "C:\Users\imman\source\repos\RunGameEngine\Run\IMGUI\IMGUI.vcxproj" (Build target) (1) ->
+       (PrepareForBuild target) -> 
+         C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(495,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+
+
+       "C:\Users\imman\source\repos\RunGameEngine\Run\IMGUI\IMGUI.vcxproj" (Build target) (1) ->
+         C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(496,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+
+    2 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:02.72

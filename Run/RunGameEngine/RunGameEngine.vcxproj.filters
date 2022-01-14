@@ -39,13 +39,13 @@
     <ClCompile Include="Run\Shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Run\OrthograpicCamera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Run\SoundManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Run\RunApplication.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Run\Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -74,9 +74,6 @@
     <ClInclude Include="Run.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Run\OrthograpicCamera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Run\SoundManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -87,6 +84,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Run\EntryPoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Run\Camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
