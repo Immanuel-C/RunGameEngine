@@ -30,40 +30,40 @@ public:
     {
         // Make sure to init the window before the camera
         window = std::make_shared<Window>(800, 600, "Run Game Engine Example", nullptr, nullptr, false); // the last param is if Vsync is on 
-        camera = Camera(-window->getWidth(), window->getWidth(), -window->getHeight(), window->getHeight());
+        camera = Camera(0, window->getWidth(), 0, window->getHeight());
 
         Input::Input(window);
 
-        //soundManager.play("Res/Audio/getout.ogg");
+        soundManager->play("Res/Audio/getout.ogg");
 
-        //quad = renderer->createQuad(glm::vec2(500.0f, 500.0f), glm::vec2(250.0f, 250.0f), LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), LoadFile::loadTexture("Res/Textures/Lake.jpg"));
-        triangle = renderer->createShape(NDCvertices, NDCindices, LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), LoadFile::loadTexture("Res/Textures/Lake.jpg"));
+        quad = renderer->createQuad(glm::vec2(400.0f, 300.0f), glm::vec2(50.0f, 50.0f), LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), LoadFile::loadTexture("Res/Textures/Lake.jpg"));
+        //triangle = renderer->createShape(NDCvertices, NDCindices, LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), LoadFile::loadTexture("Res/Textures/Lake.jpg"));
     }
 
     bool isFullscreen = false;
 
     void controlShape(Shape shape, float dt)
     {
-        float movementSpeed = 1000.0f * dt;
+        float movementSpeed = 1000.0f;
 
         if (Input::isKeyPressed(Keys::W) || Input::isKeyPressed(Keys::ArrowUp))
         {
-            shape.setPosition(glm::vec2(0.0f, movementSpeed ));
+            shape.setPosition(glm::vec2(shape.getPosition().x, shape.getPosition().y + movementSpeed));
         }
         if (Input::isKeyPressed(Keys::A) || Input::isKeyPressed(Keys::ArrowLeft))
         {
-            shape.setPosition(glm::vec2(movementSpeed, 0.0f));
+            shape.setPosition(glm::vec2(shape.getPosition().x - movementSpeed, shape.getPosition().y));
         }
         if (Input::isKeyPressed(Keys::S) || Input::isKeyPressed(Keys::ArrowDown))
         {
-            shape.setPosition(glm::vec2(0.0f, movementSpeed));
+            shape.setPosition(glm::vec2(shape.getPosition().x, shape.getPosition().y - movementSpeed));
         }
         if (Input::isKeyPressed(Keys::D) || Input::isKeyPressed(Keys::ArrowRight))
         {
-            shape.setPosition(glm::vec2(movementSpeed, 0.0f));
+            shape.setPosition(glm::vec2(shape.getPosition().x + movementSpeed, shape.getPosition().y));
         }
 
-        std::cout << "X: " << shape.getPosition().x << " Y: " << shape.getPosition().x << "\n";
+        std::cout << "X: " << shape.getPosition().x << " Y: " << shape.getPosition().y << "\n";
     }
 
     
@@ -93,13 +93,16 @@ public:
         */
 
         // Render here:
-        //quad.setCamera(camera);
-        //renderer->draw(quad);
+        quad.setCamera(camera);
+        controlShape(quad, dt);
+        renderer->draw(quad);
 
-        controlShape(triangle, dt);
+        //controlShape(triangle, dt);
 
-        triangle.setCamera(camera);
-        renderer->draw(triangle);
+        //triangle.setCamera(camera);
+        //renderer->draw(triangle);
+
+
 
         window->doBackEndStuff();
     }

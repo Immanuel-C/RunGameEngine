@@ -114,7 +114,8 @@ Window::Window(float w, float h, const char* title, GLFWmonitor* monitor, GLFWwi
     }
 
     glViewport(0, 0, w, h);
-    
+    glDisable(GL_CULL_FACE);
+
     // Debug mode
     //glEnable(GL_DEBUG_OUTPUT);
     //glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
