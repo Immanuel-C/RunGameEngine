@@ -14,15 +14,13 @@ public:
     std::vector<float> NDCvertices =
 {
         // positions    // texture coords
-         100.0f, -50.0f,  1.0f, 0.0f,   // bottom right
-         150.0f, 75.0f,  0.5f, 1.0f,   // ? 
-         200.0f, -100.0f,  0.0f, 0.0f,   // bottom left
-         250.0f, 125.0f,  0.0f, 0.0f,   // ?
+         500.0f, 100.0f,  1.0f, 0.0f,   // bottom right
+         450.0f, 500.0f,  0.5f, 1.0f,   // top 
+         600.0f, 100.0f,  0.0f, 0.0f,   // bottom left
     };
 
     std::vector<unsigned int> NDCindices = {  // note that we start from 0!
-        0, 1, 3,
-        1, 2, 3
+        0, 1, 2,   // first triangle
     };
 
     /// <summary>
@@ -46,23 +44,23 @@ public:
 
     void controlShape(Shape shape, float dt)
     {
-        float movementSpeed = 10.0f;
+        float movementSpeed = 1000.0f * dt;
 
         if (Input::isKeyPressed(Keys::W) || Input::isKeyPressed(Keys::ArrowUp))
         {
-            shape.setPosition(glm::vec2(shape.getPosition().x, shape.getPosition().y + movementSpeed));
+            shape.setPosition(glm::vec2(0.0f, movementSpeed ));
         }
         if (Input::isKeyPressed(Keys::A) || Input::isKeyPressed(Keys::ArrowLeft))
         {
-            shape.setPosition(glm::vec2(shape.getPosition().x - movementSpeed, shape.getPosition().y));
+            shape.setPosition(glm::vec2(movementSpeed, 0.0f));
         }
         if (Input::isKeyPressed(Keys::S) || Input::isKeyPressed(Keys::ArrowDown))
         {
-            shape.setPosition(glm::vec2(shape.getPosition().x, shape.getPosition().y - movementSpeed));
+            shape.setPosition(glm::vec2(0.0f, movementSpeed));
         }
         if (Input::isKeyPressed(Keys::D) || Input::isKeyPressed(Keys::ArrowRight))
         {
-            shape.setPosition(glm::vec2(shape.getPosition().x + movementSpeed, shape.getPosition().y));
+            shape.setPosition(glm::vec2(movementSpeed, 0.0f));
         }
 
         std::cout << "X: " << shape.getPosition().x << " Y: " << shape.getPosition().x << "\n";

@@ -55,7 +55,7 @@ float Shape::getRotation()
 void Shape::setPosition(glm::vec2 position)
 {
 	m_position = position;
-	glm::mat4 newModelMat = glm::translate(m_modelMat, glm::vec3(m_position.x, m_position.y, 0.0f)); /** glm::rotate(m_modelMat, m_rotationDeg, glm::vec3(0.0f, 0.0f, 1.0f)) * glm::scale(m_modelMat, glm::vec3(m_scale.x, m_scale.y, 0.0f));*/
+	glm::mat4 newModelMat = glm::translate(m_modelMat, glm::vec3(m_position.x, m_position.y, 0.0f)); 
 	m_modelMat = newModelMat;
 	glUniformMatrix4fv(glGetUniformLocation(m_shader, "model"), 1, GL_FALSE, glm::value_ptr(m_modelMat));
 }

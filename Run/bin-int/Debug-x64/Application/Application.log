@@ -1,4 +1,4 @@
-﻿Build started 2022-01-14 10:08:52 AM.
+﻿Build started 2022-01-14 10:22:57 AM.
 Logging verbosity is set to: Normal.     1>Project "C:\Users\imman\source\repos\RunGameEngine\Run\Application\Application.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(495,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
      1>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(496,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
@@ -27,10 +27,9 @@ Logging verbosity is set to: Normal.     1>Project "C:\Users\imman\source\repos\
                  [
                      _Ty=Window
                  ]
-       C:\Users\imman\source\repos\RunGameEngine\Run\Application\src\Application.cpp(34): message : see reference to function template instantiation 'std::shared_ptr<Window> std::make_shared<Window,int,int,const char(&)[24],nullptr,nullptr,bool>(int &&,int &&,const char (&)[24],nullptr &&,nullptr &&,bool &&)' being compiled
+       C:\Users\imman\source\repos\RunGameEngine\Run\Application\src\Application.cpp(32): message : see reference to function template instantiation 'std::shared_ptr<Window> std::make_shared<Window,int,int,const char(&)[24],nullptr,nullptr,bool>(int &&,int &&,const char (&)[24],nullptr &&,nullptr &&,bool &&)' being compiled
        Link:
          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\bin\HostX64\x64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\Application\Application.exe" /INCREMENTAL /ILK:"C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\Application\Application.ilk" /NOLOGO /LIBPATH:C:\Users\imman\source\repos\RunGameEngine\Run\Include\RUN\RunGameEngine /LIBPATH:C:\Users\imman\source\repos\RunGameEngine\Run\Include\GLFW\lib /LIBPATH:C:\Users\imman\source\repos\RunGameEngine\Run\Include\IRRKLANG\lib RunGameEngine.lib irrKlang.lib opengl32.lib glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\Application\Application.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\Application\Application.lib" /MACHINE:X64 "C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\Application\Application.obj"
-     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
          Application.vcxproj -> C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\Application\Application.exe
        FinalizeBuildStatus:
          Deleting file "C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\Application\Application.tlog\unsuccessfulbuild".
@@ -52,12 +51,7 @@ Build succeeded.
        (ClCompile target) -> 
          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\xutility(149,77): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
 
-
-       "C:\Users\imman\source\repos\RunGameEngine\Run\Application\Application.vcxproj" (Build target) (1) ->
-       (Link target) -> 
-         LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-
-    4 Warning(s)
+    3 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.38
+Time Elapsed 00:00:01.59
