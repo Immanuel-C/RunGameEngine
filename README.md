@@ -5,7 +5,7 @@ A simple low level, single threaded game engine using OpenGL and GLFW for **Wind
 **Features:**
 
 - Texture Rendering with OpenGL
-- Cameras (Unfinished) with OpenGL
+- Cameras with OpenGL
 - Input with GLFW
 - Windowing System with GLFW
 - Audio with IrrKlang
