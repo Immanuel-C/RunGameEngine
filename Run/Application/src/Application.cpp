@@ -3,75 +3,128 @@
 class Game : public RunApplication
 {
 public:
-    Renderer renderer;
-    
-    Camera camera = Camera(glm::vec3(0.0f, 0.0f, 0.0f));
-    
-    SoundManager soundManager;
-    
+    std::unique_ptr<Renderer> renderer = std::make_unique<Renderer>();
+    std::unique_ptr<SoundManager> soundManager = std::make_unique<SoundManager>();
+
+    Camera camera;
+
+    Shape quad;
     Shape triangle;
+
     std::vector<float> NDCvertices =
-    {
+{
         // positions    // texture coords
-         800.0f, 100.0f,  1.0f, 0.0f,   // bottom right
-         750.0f, 500.0f,  0.5f, 1.0f,   // top 
-         600.0f, 100.0f,  0.0f, 0.0f,   // bottom left
+         100.0f, -50.0f,  1.0f, 0.0f,   // bottom right
+         150.0f, 75.0f,  0.5f, 1.0f,   // ? 
+         200.0f, -100.0f,  0.0f, 0.0f,   // bottom left
+         250.0f, 125.0f,  0.0f, 0.0f,   // ?
     };
-    
+
     std::vector<unsigned int> NDCindices = {  // note that we start from 0!
-        0, 1, 2,   // first triangle
+        0, 1, 3,
+        1, 2, 3
     };
-    
-    void Start()
+
+    /// <summary>
+    /// The start method is called before the Update method and is kind of like the constructor for the class
+    /// </summary>
+    void Start() override
     {
-        window = Window(1280, 720, "Run Game Engine Example", nullptr, nullptr, false); // the last param is if Vsync is on 
+        // Make sure to init the window before the camera
+        window = std::make_shared<Window>(800, 600, "Run Game Engine Example", nullptr, nullptr, false); // the last param is if Vsync is on 
+        camera = Camera(-window->getWidth(), window->getWidth(), -window->getHeight(), window->getHeight());
 
         Input::Input(window);
 
-        soundManager.play("Res/Audio/getout.ogg");
+        //soundManager.play("Res/Audio/getout.ogg");
 
-        triangle = renderer.createShape(NDCvertices, NDCindices, LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), LoadFile::loadTexture("Res/Textures/Lake.jpg"));
-
+        //quad = renderer->createQuad(glm::vec2(500.0f, 500.0f), glm::vec2(250.0f, 250.0f), LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), LoadFile::loadTexture("Res/Textures/Lake.jpg"));
+        triangle = renderer->createShape(NDCvertices, NDCindices, LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), LoadFile::loadTexture("Res/Textures/Lake.jpg"));
     }
 
     bool isFullscreen = false;
 
-    // Do not set the windowColor after you draw any shapes!
-    void Update(float dt)
+    void controlShape(Shape shape, float dt)
     {
-        window.setWindowColor(0.5f, 0.25f, 0.1f, 1.0f);
+        float movementSpeed = 10.0f;
+
+        if (Input::isKeyPressed(Keys::W) || Input::isKeyPressed(Keys::ArrowUp))
+        {
+            shape.setPosition(glm::vec2(shape.getPosition().x, shape.getPosition().y + movementSpeed));
+        }
+        if (Input::isKeyPressed(Keys::A) || Input::isKeyPressed(Keys::ArrowLeft))
+        {
+            shape.setPosition(glm::vec2(shape.getPosition().x - movementSpeed, shape.getPosition().y));
+        }
+        if (Input::isKeyPressed(Keys::S) || Input::isKeyPressed(Keys::ArrowDown))
+        {
+            shape.setPosition(glm::vec2(shape.getPosition().x, shape.getPosition().y - movementSpeed));
+        }
+        if (Input::isKeyPressed(Keys::D) || Input::isKeyPressed(Keys::ArrowRight))
+        {
+            shape.setPosition(glm::vec2(shape.getPosition().x + movementSpeed, shape.getPosition().y));
+        }
+
+        std::cout << "X: " << shape.getPosition().x << " Y: " << shape.getPosition().x << "\n";
+    }
+
+    
+    /// <summary>
+    /// The Update method is called after the start method and will be called every frame.
+    /// Do not set the windowColor after you draw any shapes!
+    /// </summary>
+    /// <param name="dt">
+    /// multiply something by delta if it is tied to framerate
+    /// </param>
+    void Update(float dt) override
+    {
+        window->setWindowColor(0.5f, 0.25f, 0.1f, 1.0f);
 
         if (Input::isKeyPressed(Keys::Escape))
         {
-            window.destroy();
+            window->destroy();
         }
+
+        /*
         if (Input::isKeyPressed(Keys::F11))
         {
             isFullscreen = !isFullscreen;
         }
-        
-        window.setFullscreen(isFullscreen); // Fullscreen mode is still a bit buggy 
 
+        window.setFullscreen(isFullscreen); // Fullscreen mode is still a bit buggy 
+        */
 
         // Render here:
-        triangle.setCamera(camera);
-        triangle.setRotation(glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
-        renderer.draw(triangle);
+        //quad.setCamera(camera);
+        //renderer->draw(quad);
 
-        window.doBackEndStuff();
+        controlShape(triangle, dt);
+
+        triangle.setCamera(camera);
+        renderer->draw(triangle);
+
+        window->doBackEndStuff();
     }
 
-	void End()
-	{
+    /// <summary>
+    /// Run calls this after the Update method.
+    /// Use this method to deconstruct any classes 
+    /// </summary>
+    void End() override
+    {
         // Make sure to destroy anything if it has a destructor!
         camera.destroy();
-        soundManager.destroy();
-        renderer.destroy();
-        window.destroy();
-	}
+        soundManager->destroy();
+        renderer->destroy();
+
+        // Call the destructor for window after every other destructor because the window destructor also terminates glfw 
+        window->destroy();
+
+        // The window and renderer will be automatically call delete becuase it is a smart pointer
+    }
 };
 
 RunApplication* CreateApplication()
 {
-	return new Game;
+    return new Game;
 }

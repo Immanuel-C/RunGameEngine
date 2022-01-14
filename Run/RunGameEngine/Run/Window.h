@@ -16,8 +16,10 @@ public:
 	float getHeight();
 	void destroy();
 
+	friend void windowSizeCallBack(GLFWwindow* window, int width, int height);
+
 	void setFullscreen(bool fullscreen);
 private:
 	GLFWwindow* m_window;
-	float m_width, m_height;
+	int m_width, m_height;
 };

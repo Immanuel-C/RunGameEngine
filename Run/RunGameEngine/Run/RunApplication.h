@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Window.h"
+#include <string>
 
 class RunApplication
 {
@@ -13,5 +14,5 @@ public:
 
 	void Loop();
 
-	Window window;
+	std::shared_ptr<Window> window;
 };

@@ -6,7 +6,7 @@
 class Input
 {
 public:
-	Input(Window window);
+	Input(std::shared_ptr<Window> window);
 
 	static bool isKeyPressed(uint16_t key);
 	static bool isMouseButtonPressed(uint16_t button);

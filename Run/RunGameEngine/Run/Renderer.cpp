@@ -25,10 +25,56 @@ Shape Renderer::createShape(std::vector<float> vertices, std::vector<unsigned in
 	return shape;
 }
 
-void Renderer::draw(Shape shape)
+Shape Renderer::createQuad(glm::vec2 position, glm::vec2 scale, Shader shader, Texture texture)
 {
-	if (m_usingIndices == false)
+	float x = position.x;
+	float y = position.y;
+	float width = scale.x;
+	float height = scale.y;
+
+	std::vector<float> vertices =
 	{
+		x+width, y+height, 1.0f, 1.0f, // TR
+		x+width, y-height, 1.0f, 0.0f, // BR
+		x-width, y-height, 0.0f, 0.0f, // BL
+		x-width, y+height, 0.0f, 1.0f  // TL
+	};
+
+
+	std::vector<uint32_t> indices =
+	{
+		0, 1, 3,
+		1, 2, 3
+	};
+
+	m_lenVertices = vertices.size();
+	m_lenIndices = indices.size();
+
+
+	createVAO();
+	createVBO(vertices);
+	createEBO(indices);
+	createTexture(texture);
+	createShader(shader.getVertexShader(), shader.getFragmentShader());
+
+	Shape shape;
+
+	glm::mat4 model(1.0f);
+	glUniformMatrix4fv(glGetUniformLocation(m_shader, "model"), 1, GL_FALSE, glm::value_ptr(model));
+	
+	shape.setShader(m_shader);
+	shape.setVAO(m_VAO);
+	shape.setTexture(m_texture);
+	shape.setPosition(position);
+
+	return shape;
+}
+
+void Renderer::draw(Shape& shape)
+{
+	if (!m_usingIndices)
+	{
+		// Unbinds any other shapes
 		glBindVertexArray(0);
 		glUseProgram(0);
 		shape.bindShader();
@@ -38,6 +84,7 @@ void Renderer::draw(Shape shape)
 	}
 	else
 	{
+		// Unbinds any other shapes
 		glBindVertexArray(0);
 		glUseProgram(0);
 		shape.bindShader();

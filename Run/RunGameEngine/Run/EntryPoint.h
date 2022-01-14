@@ -1,7 +1,5 @@
 #include "RunApplication.h"
 
-#include <memory>
-
 extern RunApplication* CreateApplication();
 
 

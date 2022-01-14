@@ -67,6 +67,15 @@ void GLAPIENTRY errorCallback(
 }
 
 
+void windowSizeCallBack(GLFWwindow* window, int width, int height)
+{
+    Window* win = (Window*)(glfwGetWindowUserPointer(window));
+    win->m_width = width;
+    win->m_height = height;
+    glViewport(0, 0, width, height);
+}
+
+
 Window::Window(float w, float h, const char* title, GLFWmonitor* monitor, GLFWwindow* share, bool VsyncOn)
 {
     /* Initialize the library */
@@ -78,7 +87,7 @@ Window::Window(float w, float h, const char* title, GLFWmonitor* monitor, GLFWwi
 
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
-    glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+    //glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
     /* Create a windowed mode window and its OpenGL context */
     m_window = glfwCreateWindow(w, h, title, monitor, share);
@@ -89,6 +98,10 @@ Window::Window(float w, float h, const char* title, GLFWmonitor* monitor, GLFWwi
     }
     /* Make the window's context current */
     glfwMakeContextCurrent(m_window);
+
+    glfwSetWindowUserPointer(m_window, this);
+
+    glfwSetWindowSizeCallback(m_window, windowSizeCallBack);
 
     if (!VsyncOn)
     {
@@ -105,7 +118,7 @@ Window::Window(float w, float h, const char* title, GLFWmonitor* monitor, GLFWwi
     // Debug mode
     //glEnable(GL_DEBUG_OUTPUT);
     //glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
-    //glDebugMessageCallback(errorCallback, (void*)m_window);
+    //glDebugMessageCallback(errorCallback, nullptr);
 }
 
 Window::Window()
@@ -153,6 +166,7 @@ float Window::getHeight()
 void Window::destroy()
 {  
     glfwDestroyWindow(m_window);
+
     glfwTerminate();
 }
 

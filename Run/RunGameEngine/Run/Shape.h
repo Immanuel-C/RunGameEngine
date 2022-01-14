@@ -20,9 +20,9 @@ public:
 	float getRotation();
 	
 	void setPosition(glm::vec2 position);
-	void setRotation(float rotationDeg, glm::vec3 axis);
+	void setRotation(float rotationDeg);
 	void setScale(glm::vec2 scale);
-	void setCamera(Camera camera);
+	void setCamera(Camera& Camera);
 private:
 	unsigned int m_VAO;
 	unsigned int m_shader;

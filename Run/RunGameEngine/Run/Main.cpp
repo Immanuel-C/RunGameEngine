@@ -10,7 +10,7 @@ int DeprecatedMain(void)
 
     Input::Input(window);
 
-    Camera camera(glm::vec3(0.0f, 0.0f, 0.0f));
+    OrthograpicCamera camera(glm::vec3(0.0f, 0.0f, 0.0f));
 
     SoundManager soundManager;
 
@@ -96,7 +96,7 @@ int DeprecatedMain(void)
 
         for (int i = 0; i < sizeOfTriangles; i++)
         {
-            triangles[i].setCamera(camera);
+            triangles[i].setOrthograpicCamera(OrthograpicCamera);
             triangles[i].setRotation(glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
             renderer.draw(triangles[i]);
         }

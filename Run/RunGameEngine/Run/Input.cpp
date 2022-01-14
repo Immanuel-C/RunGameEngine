@@ -18,7 +18,7 @@ glm::vec2 Input::m_mousePos;
 GLFWwindow* Input::m_window;
 
 
-Input::Input(Window window) 
+Input::Input(std::shared_ptr<Window> window) 
 {
     int len = sizeof(m_keys) / sizeof(m_keys[0]);
     for (int i = 0; i < len; i++)
@@ -27,7 +27,7 @@ Input::Input(Window window)
     }
 
     m_mousePos = glm::vec2();
-    m_window = window.getGlfwWindow();
+    m_window = window->getGlfwWindow();
 
     glfwSetWindowUserPointer(m_window, this);
 
@@ -39,8 +39,8 @@ glm::vec2 Input::getMousePos()
 {
     double xpos, ypos;
     glfwGetCursorPos(m_window, &xpos, &ypos);
-    m_mousePos.x = (float)xpos;
-    m_mousePos.y = (float)ypos;
+    m_mousePos.x = static_cast<float>(xpos);
+    m_mousePos.y = static_cast<float>(ypos);
     return m_mousePos;
 }
 

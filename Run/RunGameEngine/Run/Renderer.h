@@ -23,7 +23,9 @@ class Renderer
 {
 public:
 	Shape createShape(std::vector<float> vertices, std::vector<unsigned int> indices, Shader shader, Texture texture);
-	void draw(Shape shape);
+	Shape createQuad(glm::vec2 position, glm::vec2 scale, Shader shader, Texture texture);
+
+	void draw(Shape& shape);
 
 	void destroy();
 private:
