@@ -22,3 +22,9 @@
 
 # Visual Studio
 .vs
+
+# build location
+Run/bin
+
+# int build location
+Run/bin-int

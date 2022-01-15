@@ -77,11 +77,6 @@ public:
         
         Gui::newFrame();
 
-        if (Input::isKeyPressed(Keys::Escape))
-        {
-            window->destroy();
-        }
-
         /*
         if (Input::isKeyPressed(Keys::F11))
         {
