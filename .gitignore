@@ -6,6 +6,7 @@
 *.lo
 *.o
 *.obj
+#
 
 # Precompiled Headers
 *.gch
@@ -23,8 +24,5 @@
 # Visual Studio
 .vs
 
-# build location
-Run/bin
-
-# int build location
-Run/bin-int
+# intermediate files
+Run\bin-int
