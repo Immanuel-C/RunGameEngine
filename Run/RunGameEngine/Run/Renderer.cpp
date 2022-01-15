@@ -25,19 +25,20 @@ Shape Renderer::createShape(std::vector<float> vertices, std::vector<unsigned in
 	return shape;
 }
 
-Shape Renderer::createQuad(glm::vec2 position, glm::vec2 scale, Shader shader, Texture texture)
+Shape Renderer::createQuad(const glm::vec3& position, const glm::vec2& scale, Shader shader, Texture texture)
 {
 	float x = position.x;
 	float y = position.y;
+	float z = position.z;
 	float width = scale.x;
 	float height = scale.y;
 
 	std::vector<float> vertices =
 	{
-		x+width, y+height, 1.0f, 1.0f, // TR
-		x+width, y-height, 1.0f, 0.0f, // BR
-		x-width, y-height, 0.0f, 0.0f, // BL
-		x-width, y+height, 0.0f, 1.0f  // TL
+		x+width, y+height, z, 1.0f, 1.0f, // TR
+		x+width, y-height, z, 1.0f, 0.0f, // BR
+		x-width, y-height, z, 0.0f, 0.0f, // BL
+		x-width, y+height, z, 0.0f, 1.0f  // TL
 	};
 
 
@@ -72,17 +73,7 @@ Shape Renderer::createQuad(glm::vec2 position, glm::vec2 scale, Shader shader, T
 
 void Renderer::draw(Shape& shape)
 {
-	if (!m_usingIndices)
-	{
-		// Unbinds any other shapes
-		glBindVertexArray(0);
-		glUseProgram(0);
-		shape.bindShader();
-		shape.bindVAO();
-		shape.bindTexture();
-		glDrawArrays(GL_TRIANGLES, 0, m_lenVertices);
-	}
-	else
+	if (m_usingIndices)
 	{
 		// Unbinds any other shapes
 		glBindVertexArray(0);
@@ -91,6 +82,16 @@ void Renderer::draw(Shape& shape)
 		shape.bindVAO();
 		shape.bindTexture();
 		glDrawElements(GL_TRIANGLES, m_lenIndices, GL_UNSIGNED_INT, 0);
+	}
+	else 
+	{
+		// Unbinds any other shapes
+		glBindVertexArray(0);
+		glUseProgram(0);
+		shape.bindShader();
+		shape.bindVAO();
+		shape.bindTexture();
+		glDrawArrays(GL_TRIANGLES, 0, m_lenVertices);
 	}
 }
 
@@ -103,7 +104,7 @@ void Renderer::destroy()
 	glDeleteBuffers(1, &m_texture);
 }
 
-void Renderer::createShader(std::string vs_Shader, std::string fs_Shader)
+void Renderer::createShader(const std::string& vs_Shader, const std::string& fs_Shader)
 {
 	int success;
 	char infoLog[512];
@@ -159,7 +160,7 @@ void Renderer::createShader(std::string vs_Shader, std::string fs_Shader)
 	glDeleteShader(fragmentShader);
 }
 
-void Renderer::createVBO(std::vector<float> vertices)
+void Renderer::createVBO(const std::vector<float>& vertices)
 {	
 
 	glGenBuffers(1, &m_VBO);
@@ -167,11 +168,11 @@ void Renderer::createVBO(std::vector<float> vertices)
 	// Send buffer data to opengl
 	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * m_lenVertices, vertices.data(), GL_DYNAMIC_DRAW);
 	// Tells opengl what to do with the buffers
-	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 }
 
-void Renderer::createEBO(std::vector<unsigned int> indices)
+void Renderer::createEBO(const std::vector<unsigned int>& indices)
 {
 	if (!indices.empty())
 	{
@@ -214,6 +215,6 @@ void Renderer::createTexture(Texture texture)
 
 	stbi_image_free(texture.getData());
 
-	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)(2 * sizeof(float)));
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
 	glEnableVertexAttribArray(1);
 }

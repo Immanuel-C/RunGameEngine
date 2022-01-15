@@ -15,13 +15,13 @@ public:
 	void setTexture(unsigned int texture);
 
 	unsigned int getShader();
-	glm::vec2 getPosition();
-	glm::vec2 getScale();
+	const glm::vec2& getPosition();
+	const glm::vec2& getScale();
 	float getRotation();
 	
-	void setPosition(glm::vec2 position);
+	void setPosition(const glm::vec2& position);
 	void setRotation(float rotationDeg);
-	void setScale(glm::vec2 scale);
+	void setScale(const glm::vec2& scale);
 	void setCamera(Camera& Camera);
 private:
 	unsigned int m_VAO;

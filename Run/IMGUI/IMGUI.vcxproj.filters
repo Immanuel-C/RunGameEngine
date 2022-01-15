@@ -27,9 +27,6 @@
     <ClCompile Include="src\imgui.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\imgui_demo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\imgui_draw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

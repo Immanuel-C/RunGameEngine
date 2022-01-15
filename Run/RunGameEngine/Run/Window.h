@@ -9,7 +9,7 @@
 class Window
 {
 public:
-	Window(float w, float h, const char* title, GLFWmonitor* monitor, GLFWwindow* share, bool VsyncOn);
+	Window(float w, float h, const std::string& title, GLFWmonitor* monitor, GLFWwindow* share, bool VsyncOn);
 	Window();
 	GLFWwindow* getGlfwWindow();
 	bool shouldClose();

@@ -9,19 +9,6 @@ public:
     Camera camera;
 
     Shape quad;
-    Shape triangle;
-
-    std::vector<float> NDCvertices =
-{
-        // positions    // texture coords
-         500.0f, 100.0f,  1.0f, 0.0f,   // bottom right
-         450.0f, 500.0f,  0.5f, 1.0f,   // top 
-         600.0f, 100.0f,  0.0f, 0.0f,   // bottom left
-    };
-
-    std::vector<unsigned int> NDCindices = {  // note that we start from 0!
-        0, 1, 2,   // first triangle
-    };
 
     /// <summary>
     /// The start method is called before the Update method and is kind of like the constructor for the class
@@ -29,25 +16,20 @@ public:
     void Start() override
     {
         // Make sure to init the window before the camera
-        window = std::make_shared<Window>(800, 600, "Run Game Engine Example", nullptr, nullptr, false); // the last param is if Vsync is on 
+        window = std::make_shared<Window>(800, 600, "Run Game Engine Example", nullptr, nullptr, false); // the last param is if Vsync is on  
         
-        IMGUI_CHECKVERSION();
-        ImGui::CreateContext();
-        ImGuiIO& io = ImGui::GetIO();
-        // Setup Platform/Renderer bindings
-        ImGui_ImplGlfw_InitForOpenGL(window->getGlfwWindow(), true);
-        ImGui_ImplOpenGL3_Init("#version 460");
-        // Setup Dear ImGui style
-        ImGui::StyleColorsDark();
-        
-        camera = Camera(-window->getWidth(), window->getWidth(), -window->getHeight(), window->getHeight());
-
+        Gui::Gui(window); // The Gui class is a wrapper for Dear ImGui
         Input::Input(window);
 
+        //camera = Camera(-window->getWidth(), window->getWidth(), -window->getHeight(), window->getHeight());
+        camera = Camera(0.0f, window->getWidth(), 0.0f, window->getHeight());
+        // We set the cameras's z position to -1 becuase all other objects z position is 0 so 
+        // the camera and the other objects would be in the same z position and the objects 
+        // would get clipped out of our screen 
+        camera.setPosition({ 0.0f, 0.0f, -1.0f }); 
         //soundManager->play("Res/Audio/getout.ogg");
 
-        quad = renderer->createQuad(glm::vec2(0.0f, 0.0f), glm::vec2(150.0f, 150.0f), LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), LoadFile::loadTexture("Res/Textures/Lake.jpg"));
-        //triangle = renderer->createShape(NDCvertices, NDCindices, LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), LoadFile::loadTexture("Res/Textures/Lake.jpg"));
+        quad = renderer->createQuad({ 100.0f, 100.0f, 0.0f }, { 50.0f, 50.0f }, LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), LoadFile::loadTexture("Res/Textures/Lake.jpg"));
     }
 
     bool isFullscreen = false;
@@ -56,24 +38,29 @@ public:
     {
         float movementSpeed = 10.0f;
 
+        float positionX = shape.getPosition().x;
+        float positionY = shape.getPosition().y;
+
         if (Input::isKeyPressed(Keys::W) || Input::isKeyPressed(Keys::ArrowUp))
         {
-            shape.setPosition(glm::vec2(shape.getPosition().x, shape.getPosition().y + movementSpeed));
+            positionY += movementSpeed;
         }
         if (Input::isKeyPressed(Keys::A) || Input::isKeyPressed(Keys::ArrowLeft))
         {
-            shape.setPosition(glm::vec2(shape.getPosition().x - movementSpeed, shape.getPosition().y));
+            positionX -= movementSpeed;
         }
         if (Input::isKeyPressed(Keys::S) || Input::isKeyPressed(Keys::ArrowDown))
         {
-            shape.setPosition(glm::vec2(shape.getPosition().x, shape.getPosition().y - movementSpeed));
+            positionY -= movementSpeed;
         }
         if (Input::isKeyPressed(Keys::D) || Input::isKeyPressed(Keys::ArrowRight))
         {
-            shape.setPosition(glm::vec2(shape.getPosition().x + movementSpeed, shape.getPosition().y));
+            positionX += movementSpeed;
         }
 
-        std::cout << "X: " << shape.getPosition().x << " Y: " << shape.getPosition().y << "\n";
+        shape.setPosition({positionX, positionY});
+
+       // std::cout << "X: " << shape.getPosition().x << " Y: " << shape.getPosition().y << "\n";
     }
 
     
@@ -88,9 +75,7 @@ public:
     {
         window->setWindowColor(0.5f, 0.25f, 0.1f, 1.0f);
         
-        ImGui_ImplOpenGL3_NewFrame();
-        ImGui_ImplGlfw_NewFrame();
-        ImGui::NewFrame();
+        Gui::newFrame();
 
         if (Input::isKeyPressed(Keys::Escape))
         {
@@ -106,18 +91,33 @@ public:
         window.setFullscreen(isFullscreen); // Fullscreen mode is still a bit buggy 
         */
 
-        ImGui::Render();
-        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+        controlShape(quad, dt);
 
         // Render here:
         quad.setCamera(camera);
-        controlShape(quad, dt);
         renderer->draw(quad);
 
-        //controlShape(triangle, dt);
+        ImGui::Begin("Control Window");
 
-        //triangle.setCamera(camera);
-        //renderer->draw(triangle);
+        // position
+        float newPosition[2] = { quad.getPosition().x , quad.getPosition().y};
+        ImGui::DragFloat2("Position", newPosition);
+        quad.setPosition({ newPosition[0], newPosition[1] });
+
+        // rotation
+        float rotation = quad.getRotation();
+        ImGui::DragFloat("Rotation", &rotation);
+        quad.setRotation(rotation);
+
+        //scale
+        float newScale[2] = { quad.getScale().x, quad.getScale().y };
+        ImGui::DragFloat2("Scale", newScale);
+        quad.setScale({ newScale[0], newScale[1]});
+
+        
+        ImGui::End();
+
+        Gui::render();
 
         window->doBackEndStuff();
     }
@@ -132,13 +132,7 @@ public:
         camera.destroy();
         soundManager->destroy();
         renderer->destroy();
-
-        //ImGui
-        ImGui_ImplOpenGL3_Shutdown();
-        ImGui_ImplGlfw_Shutdown();
-        ImGui::DestroyContext();
-
-
+        Gui::destroy();
         // Call the destructor for window after every other destructor because the window destructor also terminates glfw 
         window->destroy();
 

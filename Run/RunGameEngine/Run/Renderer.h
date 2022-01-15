@@ -22,16 +22,16 @@
 class Renderer
 {
 public:
-	Shape createShape(std::vector<float> vertices, std::vector<unsigned int> indices, Shader shader, Texture texture);
-	Shape createQuad(glm::vec2 position, glm::vec2 scale, Shader shader, Texture texture);
+	Shape createShape(std::vector<float> vertices, std::vector<unsigned int> indices, Shader shader, Texture texture); // You shoud not really use this method
+	Shape createQuad(const glm::vec3& position, const glm::vec2& scale, Shader shader, Texture texture);
 
 	void draw(Shape& shape);
 
 	void destroy();
 private:
-	void createShader(std::string vs_shader, std::string fs_shader);
-	void createVBO(std::vector<float> vertices);
-	void createEBO(std::vector<unsigned int> indices);
+	void createShader(const std::string& vs_shader, const std::string& fs_shader);
+	void createVBO(const std::vector<float>& vertices);
+	void createEBO(const std::vector<unsigned int>& indices);
 	void createVAO();
 	void createTexture(Texture texture);
 

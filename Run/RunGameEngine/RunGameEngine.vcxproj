@@ -104,6 +104,7 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Run\Gui.cpp" />
     <ClCompile Include="Run\RunApplication.cpp" />
     <ClCompile Include="Run\Camera.cpp" />
     <ClCompile Include="Glad\glad.c" />
@@ -117,6 +118,7 @@
     <ClCompile Include="Run\SoundManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Run\Gui.h" />
     <ClInclude Include="Run\RunApplication.h" />
     <ClInclude Include="Run\Camera.h" />
     <ClInclude Include="Run\EntryPoint.h" />

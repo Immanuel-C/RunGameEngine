@@ -37,12 +37,12 @@ unsigned int Shape::getShader()
 	return m_shader;
 }
 
-glm::vec2 Shape::getPosition()
+const glm::vec2& Shape::getPosition()
 {
 	return m_position;
 }
 
-glm::vec2 Shape::getScale()
+const glm::vec2& Shape::getScale()
 {
 	return m_scale;
 }
@@ -52,25 +52,30 @@ float Shape::getRotation()
 	return m_rotationDeg;
 }
 
-void Shape::setPosition(glm::vec2 position)
+void Shape::setPosition(const glm::vec2& position)
 {
 	m_position = position;
-	glm::mat4 newModelMat = glm::translate(m_modelMat, glm::vec3(m_position.x, m_position.y, 0.0f)); 
-	m_modelMat = newModelMat;
+	m_modelMat = glm::translate(glm::mat4(1.0f), glm::vec3(m_position.x, m_position.y, 0.0f)) * 
+		glm::rotate(glm::mat4(1.0f), m_rotationDeg, glm::vec3(0.0f, 0.0f, 1.0f)) *
+		glm::scale(glm::mat4(1.0f), glm::vec3(m_scale.x, m_scale.y, 1.0f));
 	glUniformMatrix4fv(glGetUniformLocation(m_shader, "model"), 1, GL_FALSE, glm::value_ptr(m_modelMat));
 }
 
 void Shape::setRotation(float rotationDeg)
 {
 	m_rotationDeg = rotationDeg;
-	m_modelMat = glm::rotate(m_modelMat, glm::radians(m_rotationDeg), glm::vec3(0.0f, 0.0f, 1.0f));
+	m_modelMat = glm::translate(glm::mat4(1.0f), glm::vec3(m_position.x, m_position.y, 0.0f)) * 
+		glm::rotate(glm::mat4(1.0f), glm::radians(m_rotationDeg), glm::vec3(0.0f, 0.0f, 1.0f)) * 
+		glm::scale(glm::mat4(1.0f), glm::vec3(m_scale.x, m_scale.y, 1.0f));
 	glUniformMatrix4fv(glGetUniformLocation(m_shader, "model"), 1, GL_FALSE, glm::value_ptr(m_modelMat));
 }
 
-void Shape::setScale(glm::vec2 scale)
+void Shape::setScale(const glm::vec2& scale)
 {
 	m_scale = scale;
-	m_modelMat = glm::scale(m_modelMat, glm::vec3(scale.x, scale.y, 0.0f));
+	m_modelMat = glm::translate(glm::mat4(1.0f), glm::vec3(m_position.x, m_position.y, 0.0f)) *
+		glm::rotate(glm::mat4(1.0f), glm::radians(m_rotationDeg), glm::vec3(0.0f, 0.0f, 1.0f)) *
+		glm::scale(glm::mat4(1.0f), glm::vec3(m_scale.x, m_scale.y, 1.0f));
 	glUniformMatrix4fv(glGetUniformLocation(m_shader, "model"), 1, GL_FALSE, glm::value_ptr(m_modelMat));
 }
 

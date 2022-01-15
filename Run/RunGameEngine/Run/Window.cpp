@@ -76,7 +76,7 @@ void windowSizeCallBack(GLFWwindow* window, int width, int height)
 }
 
 
-Window::Window(float w, float h, const char* title, GLFWmonitor* monitor, GLFWwindow* share, bool VsyncOn)
+Window::Window(float w, float h, const std::string& title, GLFWmonitor* monitor, GLFWwindow* share, bool VsyncOn)
 {
     /* Initialize the library */
     if (!glfwInit())
@@ -90,7 +90,7 @@ Window::Window(float w, float h, const char* title, GLFWmonitor* monitor, GLFWwi
     //glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
     /* Create a windowed mode window and its OpenGL context */
-    m_window = glfwCreateWindow(w, h, title, monitor, share);
+    m_window = glfwCreateWindow(w, h, title.c_str(), monitor, share);
     if (!m_window)
     {
         glfwTerminate();
