@@ -21,7 +21,7 @@ Run only supports graphics cards with the version 4.6 of OpenGL.
 
 The Run game engine is using the **MSVC** compiler.
 
-**Make sure you have all the irrKlang .dll files and the Res folder in the Application build directory.** the .dll's and the Res folder should already be in the debug build location.
+**Make sure you have all the irrKlang .dll files and the Res folder in the Application build directory.** the .dll's and the Res folder should already be in the build location.
 
 To build, you need to make sure you **right click on the RunGameEngine project and then click build and then press run. Every time you change the files in the game engine you must do the previous instructions**. If you dont The .lib file and the header files may be mismatched and you will get a linking error.
 

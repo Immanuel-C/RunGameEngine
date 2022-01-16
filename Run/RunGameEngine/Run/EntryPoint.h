@@ -1,11 +1,11 @@
 #include "RunApplication.h"
 
-extern RunApplication* CreateApplication();
+extern Run::RunApplication* CreateApplication();
 
 
 int main(int argc, char** argv)
 {
-	RunApplication* app = CreateApplication();
+	Run::RunApplication* app = CreateApplication();
 	app->Start();
 	app->Loop();
 	app->End();

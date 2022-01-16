@@ -1,86 +1,88 @@
 #include "Shape.h"
 
+namespace Run {
 
-void Shape::bindVAO()
-{
-	glBindVertexArray(m_VAO);
-}
+	void Shape::bindVAO()
+	{
+		glBindVertexArray(m_VAO);
+	}
 
-void Shape::bindShader()
-{
-	glUseProgram(m_shader);
-}
+	void Shape::bindShader()
+	{
+		glUseProgram(m_shader);
+	}
 
-void Shape::bindTexture()
-{
-	glBindTexture(GL_TEXTURE_2D, m_texture);
-}
+	void Shape::bindTexture()
+	{
+		glBindTexture(GL_TEXTURE_2D, m_texture);
+	}
 
-void Shape::setShader(unsigned int shader)
-{
-	m_shader = shader;
-}
+	void Shape::setShader(unsigned int shader)
+	{
+		m_shader = shader;
+	}
 
-void Shape::setVAO(unsigned int VAO)
-{
-	m_VAO = VAO;
-}
+	void Shape::setVAO(unsigned int VAO)
+	{
+		m_VAO = VAO;
+	}
 
-void Shape::setTexture(unsigned int texture)
-{
-	m_texture = texture;
-}
+	void Shape::setTexture(unsigned int texture)
+	{
+		m_texture = texture;
+	}
 
+	unsigned int Shape::getShader()
+	{
+		return m_shader;
+	}
 
-unsigned int Shape::getShader()
-{
-	return m_shader;
-}
+	const glm::vec2& Shape::getPosition()
+	{
+		return m_position;
+	}
 
-const glm::vec2& Shape::getPosition()
-{
-	return m_position;
-}
+	const glm::vec2& Shape::getScale()
+	{
+		return m_scale;
+	}
 
-const glm::vec2& Shape::getScale()
-{
-	return m_scale;
-}
+	float Shape::getRotation()
+	{
+		return m_rotationDeg;
+	}
 
-float Shape::getRotation()
-{
-	return m_rotationDeg;
-}
+	void Shape::setPosition(const glm::vec2& position)
+	{
+		m_position = position;
+		recalculateMatrices();
+		glUniformMatrix4fv(glGetUniformLocation(m_shader, "model"), 1, GL_FALSE, glm::value_ptr(m_modelMat));
+	}
 
-void Shape::setPosition(const glm::vec2& position)
-{
-	m_position = position;
-	m_modelMat = glm::translate(glm::mat4(1.0f), glm::vec3(m_position.x, m_position.y, 0.0f)) * 
-		glm::rotate(glm::mat4(1.0f), m_rotationDeg, glm::vec3(0.0f, 0.0f, 1.0f)) *
-		glm::scale(glm::mat4(1.0f), glm::vec3(m_scale.x, m_scale.y, 1.0f));
-	glUniformMatrix4fv(glGetUniformLocation(m_shader, "model"), 1, GL_FALSE, glm::value_ptr(m_modelMat));
-}
+	void Shape::setRotation(float rotationDeg)
+	{
+		m_rotationDeg = rotationDeg;
+		recalculateMatrices();
+		glUniformMatrix4fv(glGetUniformLocation(m_shader, "model"), 1, GL_FALSE, glm::value_ptr(m_modelMat));
+	}
 
-void Shape::setRotation(float rotationDeg)
-{
-	m_rotationDeg = rotationDeg;
-	m_modelMat = glm::translate(glm::mat4(1.0f), glm::vec3(m_position.x, m_position.y, 0.0f)) * 
-		glm::rotate(glm::mat4(1.0f), glm::radians(m_rotationDeg), glm::vec3(0.0f, 0.0f, 1.0f)) * 
-		glm::scale(glm::mat4(1.0f), glm::vec3(m_scale.x, m_scale.y, 1.0f));
-	glUniformMatrix4fv(glGetUniformLocation(m_shader, "model"), 1, GL_FALSE, glm::value_ptr(m_modelMat));
-}
+	void Shape::setScale(const glm::vec2& scale)
+	{
+		m_scale = scale;
+		recalculateMatrices();
+		glUniformMatrix4fv(glGetUniformLocation(m_shader, "model"), 1, GL_FALSE, glm::value_ptr(m_modelMat));
+	}
 
-void Shape::setScale(const glm::vec2& scale)
-{
-	m_scale = scale;
-	m_modelMat = glm::translate(glm::mat4(1.0f), glm::vec3(m_position.x, m_position.y, 0.0f)) *
-		glm::rotate(glm::mat4(1.0f), glm::radians(m_rotationDeg), glm::vec3(0.0f, 0.0f, 1.0f)) *
-		glm::scale(glm::mat4(1.0f), glm::vec3(m_scale.x, m_scale.y, 1.0f));
-	glUniformMatrix4fv(glGetUniformLocation(m_shader, "model"), 1, GL_FALSE, glm::value_ptr(m_modelMat));
-}
+	void Shape::setCamera(Camera& camera)
+	{
+		glUniformMatrix4fv(glGetUniformLocation(m_shader, "view"), 1, GL_FALSE, glm::value_ptr(camera.getViewMat()));
+		glUniformMatrix4fv(glGetUniformLocation(m_shader, "projection"), 1, GL_FALSE, glm::value_ptr(camera.getProjectionMat()));
+	}
 
-void Shape::setCamera(Camera& camera)
-{
-	glUniformMatrix4fv(glGetUniformLocation(m_shader, "view"), 1, GL_FALSE, glm::value_ptr(camera.getViewMat()));
-	glUniformMatrix4fv(glGetUniformLocation(m_shader, "projection"), 1, GL_FALSE, glm::value_ptr(camera.getProjectionMat()));
+	void Shape::recalculateMatrices()
+	{
+		m_modelMat = glm::translate(glm::mat4(1.0f), glm::vec3(m_position.x, m_position.y, 0.0f)) *
+			glm::rotate(glm::mat4(1.0f), glm::radians(m_rotationDeg), glm::vec3(0.0f, 0.0f, 1.0f)) *
+			glm::scale(glm::mat4(1.0f), glm::vec3(m_scale.x, m_scale.y, 1.0f));
+	}
 }

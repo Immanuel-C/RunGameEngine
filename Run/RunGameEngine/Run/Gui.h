@@ -11,14 +11,17 @@
 // std
 #include <memory>
 
-class Gui
-{
-public:
-	Gui(std::shared_ptr<Window> window);
-	
-	static void newFrame();
-	static void render();
-	static void destroy();
+namespace Run {
 
-};
+	class Gui
+	{
+	public:
+		Gui(std::shared_ptr<Window>& window);
+
+		static void newFrame();
+		static void render();
+		static void destroy();
+
+	};
+}
 

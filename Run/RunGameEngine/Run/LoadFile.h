@@ -3,10 +3,13 @@
 #include "Shader.h"
 #include <fstream>
 #include <sstream>
-class LoadFile
-{
-public:
-	static Texture loadTexture(const char* fileLocation); 
-	static Shader loadShader(const char* vertexShaderFileLocation, const char* fragmentShaderFileLocation);
-};
+
+namespace Run {
+	class LoadFile
+	{
+	public:
+		static Texture loadTexture(const char* fileLocation);
+		static Shader loadShader(const char* vertexShaderFileLocation, const char* fragmentShaderFileLocation);
+	};
+}
 

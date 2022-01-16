@@ -3,16 +3,18 @@
 #include "Window.h"
 #include <string>
 
-class RunApplication
-{
-public:
-	RunApplication();
+namespace Run {
+	class RunApplication
+	{
+	public:
+		RunApplication();
 
-	virtual void Start();
-	virtual void Update(float dt);
-	virtual void End();
+		virtual void Start();
+		virtual void Update(float dt);
+		virtual void End();
 
-	void Loop();
+		void Loop();
 
-	std::shared_ptr<Window> window;
-};
+		std::shared_ptr<Window> window;
+	};
+}

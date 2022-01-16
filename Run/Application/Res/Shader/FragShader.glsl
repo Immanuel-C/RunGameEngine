@@ -10,7 +10,7 @@ void main()
 {
 	color = texture(myTexture, TexCoord);
 
-	if (color.a < 0.1)
+	if (color.a < 1.0)
 	{
 		discard;
 	}

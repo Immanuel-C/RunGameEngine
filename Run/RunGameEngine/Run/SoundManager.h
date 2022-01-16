@@ -9,14 +9,17 @@
 //std
 #include <iostream>
 
-class SoundManager
-{
-public:
-	SoundManager();
-	void destroy();
-	void play(const char* fileLocation);
-	void playLooped(const char* fileLocation);
-private:
-	irrklang::ISoundEngine* m_engine;
-};
+namespace Run {
+
+	class SoundManager
+	{
+	public:
+		SoundManager();
+		void destroy();
+		void play(const char* fileLocation);
+		void playLooped(const char* fileLocation);
+	private:
+		irrklang::ISoundEngine* m_engine;
+	};
+}
 

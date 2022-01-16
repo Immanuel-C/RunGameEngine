@@ -1,11 +1,11 @@
-﻿Build started 2022-01-15 11:52:56 AM.
+﻿Build started 2022-01-16 11:24:23 AM.
 Logging verbosity is set to: Normal.     1>Project "C:\Users\imman\source\repos\RunGameEngine\Run\Application\Application.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(495,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
      1>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(496,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
      1>InitializeBuildStatus:
-         Creating "C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\Application\Application.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching "C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\Application\Application.tlog\unsuccessfulbuild".
        ClCompile:
-         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\bin\HostX64\x64\CL.exe /c /IC:\Users\imman\source\repos\RunGameEngine\Run\Include\IMGUI\include /IC:\Users\imman\source\repos\RunGameEngine\Run\RunGameEngine /IC:\Users\imman\source\repos\RunGameEngine\Run\Include\GLAD\include /IC:\Users\imman\source\repos\RunGameEngine\Run\Include\IRRKLANG\include /IC:\Users\imman\source\repos\RunGameEngine\Run\Include\STB /IC:\Users\imman\source\repos\RunGameEngine\Run\Include\GLM /IC:\Users\imman\source\repos\RunGameEngine\Run\Application\Glad /IC:\Users\imman\source\repos\RunGameEngine\Run\Include\GLFW\include /ZI /JMC /nologo /W3 /WX- /diagnostics:column /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /permissive- /Fo"C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\Application\\" /Fd"C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\Application\vc143.pdb" /external:W3 /Gd /TP /FC /errorReport:prompt src\Application.cpp
+         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\bin\HostX64\x64\CL.exe /c /IC:\Users\imman\source\repos\RunGameEngine\Run\Include\IMGUI\include /IC:\Users\imman\source\repos\RunGameEngine\Run\RunGameEngine /IC:\Users\imman\source\repos\RunGameEngine\Run\Include\GLAD\include /IC:\Users\imman\source\repos\RunGameEngine\Run\Include\IRRKLANG\include /IC:\Users\imman\source\repos\RunGameEngine\Run\Include\STB /IC:\Users\imman\source\repos\RunGameEngine\Run\Include\GLM /IC:\Users\imman\source\repos\RunGameEngine\Run\Application\Glad /IC:\Users\imman\source\repos\RunGameEngine\Run\Include\GLFW\include /ZI /JMC /nologo /W3 /WX- /diagnostics:column /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c++14 /permissive- /Fo"C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\Application\\" /Fd"C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\Application\vc143.pdb" /external:W3 /Gd /TP /FC /errorReport:prompt src\Application.cpp
          Application.cpp
      1>C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\xutility(149,77): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
                  with
@@ -15,28 +15,44 @@ Logging verbosity is set to: Normal.     1>Project "C:\Users\imman\source\repos\
        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\memory(2003): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,int,int,const char(&)[24],nullptr,nullptr,bool>(_Ty &,int &&,int &&,const char (&)[24],nullptr &&,nullptr &&,bool &&) noexcept(false)' being compiled
                  with
                  [
-                     _Ty=Window
+                     _Ty=Run::Window
                  ]
        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\memory(2722): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<int,int,const char(&)[24],nullptr,nullptr,bool>(int &&,int &&,const char (&)[24],nullptr &&,nullptr &&,bool &&)' being compiled
                  with
                  [
-                     _Ty=Window
+                     _Ty=Run::Window
                  ]
        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\memory(2723): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<int,int,const char(&)[24],nullptr,nullptr,bool>(int &&,int &&,const char (&)[24],nullptr &&,nullptr &&,bool &&)' being compiled
                  with
                  [
-                     _Ty=Window
+                     _Ty=Run::Window
                  ]
-       C:\Users\imman\source\repos\RunGameEngine\Run\Application\src\Application.cpp(19): message : see reference to function template instantiation 'std::shared_ptr<Window> std::make_shared<Window,int,int,const char(&)[24],nullptr,nullptr,bool>(int &&,int &&,const char (&)[24],nullptr &&,nullptr &&,bool &&)' being compiled
+       C:\Users\imman\source\repos\RunGameEngine\Run\Application\src\Application.cpp(19): message : see reference to function template instantiation 'std::shared_ptr<Run::Window> std::make_shared<Run::Window,int,int,const char(&)[24],nullptr,nullptr,bool>(int &&,int &&,const char (&)[24],nullptr &&,nullptr &&,bool &&)' being compiled
        Link:
          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\bin\HostX64\x64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\Application\Application.exe" /INCREMENTAL /ILK:"C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\Application\Application.ilk" /NOLOGO /LIBPATH:C:\Users\imman\source\repos\RunGameEngine\Run\Include\IMGUI /LIBPATH:C:\Users\imman\source\repos\RunGameEngine\Run\Include\RUN\RunGameEngine /LIBPATH:C:\Users\imman\source\repos\RunGameEngine\Run\Include\GLFW\lib /LIBPATH:C:\Users\imman\source\repos\RunGameEngine\Run\Include\IRRKLANG\lib IMGUI.lib RunGameEngine.lib irrKlang.lib opengl32.lib glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\Application\Application.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\Application\Application.lib" /MACHINE:X64 "C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\Application\Application.obj"
-         Application.vcxproj -> C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\Application\Application.exe
-       FinalizeBuildStatus:
-         Deleting file "C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\Application\Application.tlog\unsuccessfulbuild".
-         Touching "C:\Users\imman\source\repos\RunGameEngine\Run\bin-int\Debug-x64\Application\Application.tlog\Application.lastbuildstate".
-     1>Done Building Project "C:\Users\imman\source\repos\RunGameEngine\Run\Application\Application.vcxproj" (Build target(s)).
+     1>IMGUI.lib(imgui.obj) : warning LNK4099: PDB 'IMGUI.pdb' was not found with 'IMGUI.lib(imgui.obj)' or at 'C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\Application\IMGUI.pdb'; linking object as if no debug info
+     1>IMGUI.lib(imgui_widgets.obj) : warning LNK4099: PDB 'IMGUI.pdb' was not found with 'IMGUI.lib(imgui_widgets.obj)' or at 'C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\Application\IMGUI.pdb'; linking object as if no debug info
+     1>IMGUI.lib(imgui_draw.obj) : warning LNK4099: PDB 'IMGUI.pdb' was not found with 'IMGUI.lib(imgui_draw.obj)' or at 'C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\Application\IMGUI.pdb'; linking object as if no debug info
+     1>IMGUI.lib(imgui_tables.obj) : warning LNK4099: PDB 'IMGUI.pdb' was not found with 'IMGUI.lib(imgui_tables.obj)' or at 'C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\Application\IMGUI.pdb'; linking object as if no debug info
+     1>IMGUI.lib(imgui_impl_glfw.obj) : warning LNK4099: PDB 'IMGUI.pdb' was not found with 'IMGUI.lib(imgui_impl_glfw.obj)' or at 'C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\Application\IMGUI.pdb'; linking object as if no debug info
+     1>IMGUI.lib(imgui_impl_opengl3.obj) : warning LNK4099: PDB 'IMGUI.pdb' was not found with 'IMGUI.lib(imgui_impl_opengl3.obj)' or at 'C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\Application\IMGUI.pdb'; linking object as if no debug info
+     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+     1>Application.obj : error LNK2019: unresolved external symbol "public: __cdecl Run::Window::Window(float,float,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct GLFWmonitor *,struct GLFWwindow *,bool)" (??0Window@Run@@QEAA@MMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAUGLFWmonitor@@PEAUGLFWwindow@@_N@Z) referenced in function "void __cdecl std::_Construct_in_place<class Run::Window,int,int,char const (&)[24],std::nullptr_t,std::nullptr_t,bool>(class Run::Window &,int &&,int &&,char const (&)[24],std::nullptr_t &&,std::nullptr_t &&,bool &&)" (??$_Construct_in_place@VWindow@Run@@HHAEAY0BI@$$CBD$$T$$T_N@std@@YAXAEAVWindow@Run@@$$QEAH1AEAY0BI@$$CBD$$QEA$$T3$$QEA_N@Z)
+     1>RunGameEngine.lib(RunApplication.obj) : error LNK2001: unresolved external symbol "public: __cdecl Run::Window::Window(float,float,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct GLFWmonitor *,struct GLFWwindow *,bool)" (??0Window@Run@@QEAA@MMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAUGLFWmonitor@@PEAUGLFWwindow@@_N@Z)
+     1>Application.obj : error LNK2019: unresolved external symbol "public: void __cdecl Run::Window::setWindowColor(float,float,float,float)" (?setWindowColor@Window@Run@@QEAAXMMMM@Z) referenced in function "public: virtual void __cdecl Game::Update(float)" (?Update@Game@@UEAAXM@Z)
+     1>Application.obj : error LNK2019: unresolved external symbol "public: void __cdecl Run::Window::doBackEndStuff(void)" (?doBackEndStuff@Window@Run@@QEAAXXZ) referenced in function "public: virtual void __cdecl Game::Update(float)" (?Update@Game@@UEAAXM@Z)
+     1>Application.obj : error LNK2019: unresolved external symbol "public: float __cdecl Run::Window::getWidth(void)" (?getWidth@Window@Run@@QEAAMXZ) referenced in function "public: virtual void __cdecl Game::Start(void)" (?Start@Game@@UEAAXXZ)
+     1>Application.obj : error LNK2019: unresolved external symbol "public: float __cdecl Run::Window::getHeight(void)" (?getHeight@Window@Run@@QEAAMXZ) referenced in function "public: virtual void __cdecl Game::Start(void)" (?Start@Game@@UEAAXXZ)
+     1>Application.obj : error LNK2019: unresolved external symbol "public: void __cdecl Run::Window::destroy(void)" (?destroy@Window@Run@@QEAAXXZ) referenced in function "public: virtual void __cdecl Game::End(void)" (?End@Game@@UEAAXXZ)
+     1>Application.obj : error LNK2019: unresolved external symbol "public: __cdecl Run::Input::Input(class std::shared_ptr<class Run::Window> &)" (??0Input@Run@@QEAA@AEAV?$shared_ptr@VWindow@Run@@@std@@@Z) referenced in function "public: virtual void __cdecl Game::Start(void)" (?Start@Game@@UEAAXXZ)
+     1>Application.obj : error LNK2019: unresolved external symbol "public: __cdecl Run::Gui::Gui(class std::shared_ptr<class Run::Window> &)" (??0Gui@Run@@QEAA@AEAV?$shared_ptr@VWindow@Run@@@std@@@Z) referenced in function "public: virtual void __cdecl Game::Start(void)" (?Start@Game@@UEAAXXZ)
+     1>RunGameEngine.lib(Input.obj) : error LNK2019: unresolved external symbol "public: struct GLFWwindow * __cdecl Run::Window::getGlfwWindow(void)" (?getGlfwWindow@Window@Run@@QEAAPEAUGLFWwindow@@XZ) referenced in function "public: __cdecl Run::Input::Input(class std::shared_ptr<class Run::Window>)" (??0Input@Run@@QEAA@V?$shared_ptr@VWindow@Run@@@std@@@Z)
+     1>RunGameEngine.lib(Gui.obj) : error LNK2001: unresolved external symbol "public: struct GLFWwindow * __cdecl Run::Window::getGlfwWindow(void)" (?getGlfwWindow@Window@Run@@QEAAPEAUGLFWwindow@@XZ)
+     1>RunGameEngine.lib(RunApplication.obj) : error LNK2019: unresolved external symbol "public: bool __cdecl Run::Window::shouldClose(void)" (?shouldClose@Window@Run@@QEAA_NXZ) referenced in function "public: void __cdecl Run::RunApplication::Loop(void)" (?Loop@RunApplication@Run@@QEAAXXZ)
+     1>C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\Application\Application.exe : fatal error LNK1120: 10 unresolved externals
+     1>Done Building Project "C:\Users\imman\source\repos\RunGameEngine\Run\Application\Application.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
        "C:\Users\imman\source\repos\RunGameEngine\Run\Application\Application.vcxproj" (Build target) (1) ->
        (PrepareForBuild target) -> 
@@ -51,7 +67,35 @@ Build succeeded.
        (ClCompile target) -> 
          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\xutility(149,77): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
 
-    3 Warning(s)
-    0 Error(s)
 
-Time Elapsed 00:00:01.33
+       "C:\Users\imman\source\repos\RunGameEngine\Run\Application\Application.vcxproj" (Build target) (1) ->
+       (Link target) -> 
+         IMGUI.lib(imgui.obj) : warning LNK4099: PDB 'IMGUI.pdb' was not found with 'IMGUI.lib(imgui.obj)' or at 'C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\Application\IMGUI.pdb'; linking object as if no debug info
+         IMGUI.lib(imgui_widgets.obj) : warning LNK4099: PDB 'IMGUI.pdb' was not found with 'IMGUI.lib(imgui_widgets.obj)' or at 'C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\Application\IMGUI.pdb'; linking object as if no debug info
+         IMGUI.lib(imgui_draw.obj) : warning LNK4099: PDB 'IMGUI.pdb' was not found with 'IMGUI.lib(imgui_draw.obj)' or at 'C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\Application\IMGUI.pdb'; linking object as if no debug info
+         IMGUI.lib(imgui_tables.obj) : warning LNK4099: PDB 'IMGUI.pdb' was not found with 'IMGUI.lib(imgui_tables.obj)' or at 'C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\Application\IMGUI.pdb'; linking object as if no debug info
+         IMGUI.lib(imgui_impl_glfw.obj) : warning LNK4099: PDB 'IMGUI.pdb' was not found with 'IMGUI.lib(imgui_impl_glfw.obj)' or at 'C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\Application\IMGUI.pdb'; linking object as if no debug info
+         IMGUI.lib(imgui_impl_opengl3.obj) : warning LNK4099: PDB 'IMGUI.pdb' was not found with 'IMGUI.lib(imgui_impl_opengl3.obj)' or at 'C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\Application\IMGUI.pdb'; linking object as if no debug info
+         LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+
+
+       "C:\Users\imman\source\repos\RunGameEngine\Run\Application\Application.vcxproj" (Build target) (1) ->
+       (Link target) -> 
+         Application.obj : error LNK2019: unresolved external symbol "public: __cdecl Run::Window::Window(float,float,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct GLFWmonitor *,struct GLFWwindow *,bool)" (??0Window@Run@@QEAA@MMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAUGLFWmonitor@@PEAUGLFWwindow@@_N@Z) referenced in function "void __cdecl std::_Construct_in_place<class Run::Window,int,int,char const (&)[24],std::nullptr_t,std::nullptr_t,bool>(class Run::Window &,int &&,int &&,char const (&)[24],std::nullptr_t &&,std::nullptr_t &&,bool &&)" (??$_Construct_in_place@VWindow@Run@@HHAEAY0BI@$$CBD$$T$$T_N@std@@YAXAEAVWindow@Run@@$$QEAH1AEAY0BI@$$CBD$$QEA$$T3$$QEA_N@Z)
+         RunGameEngine.lib(RunApplication.obj) : error LNK2001: unresolved external symbol "public: __cdecl Run::Window::Window(float,float,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct GLFWmonitor *,struct GLFWwindow *,bool)" (??0Window@Run@@QEAA@MMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAUGLFWmonitor@@PEAUGLFWwindow@@_N@Z)
+         Application.obj : error LNK2019: unresolved external symbol "public: void __cdecl Run::Window::setWindowColor(float,float,float,float)" (?setWindowColor@Window@Run@@QEAAXMMMM@Z) referenced in function "public: virtual void __cdecl Game::Update(float)" (?Update@Game@@UEAAXM@Z)
+         Application.obj : error LNK2019: unresolved external symbol "public: void __cdecl Run::Window::doBackEndStuff(void)" (?doBackEndStuff@Window@Run@@QEAAXXZ) referenced in function "public: virtual void __cdecl Game::Update(float)" (?Update@Game@@UEAAXM@Z)
+         Application.obj : error LNK2019: unresolved external symbol "public: float __cdecl Run::Window::getWidth(void)" (?getWidth@Window@Run@@QEAAMXZ) referenced in function "public: virtual void __cdecl Game::Start(void)" (?Start@Game@@UEAAXXZ)
+         Application.obj : error LNK2019: unresolved external symbol "public: float __cdecl Run::Window::getHeight(void)" (?getHeight@Window@Run@@QEAAMXZ) referenced in function "public: virtual void __cdecl Game::Start(void)" (?Start@Game@@UEAAXXZ)
+         Application.obj : error LNK2019: unresolved external symbol "public: void __cdecl Run::Window::destroy(void)" (?destroy@Window@Run@@QEAAXXZ) referenced in function "public: virtual void __cdecl Game::End(void)" (?End@Game@@UEAAXXZ)
+         Application.obj : error LNK2019: unresolved external symbol "public: __cdecl Run::Input::Input(class std::shared_ptr<class Run::Window> &)" (??0Input@Run@@QEAA@AEAV?$shared_ptr@VWindow@Run@@@std@@@Z) referenced in function "public: virtual void __cdecl Game::Start(void)" (?Start@Game@@UEAAXXZ)
+         Application.obj : error LNK2019: unresolved external symbol "public: __cdecl Run::Gui::Gui(class std::shared_ptr<class Run::Window> &)" (??0Gui@Run@@QEAA@AEAV?$shared_ptr@VWindow@Run@@@std@@@Z) referenced in function "public: virtual void __cdecl Game::Start(void)" (?Start@Game@@UEAAXXZ)
+         RunGameEngine.lib(Input.obj) : error LNK2019: unresolved external symbol "public: struct GLFWwindow * __cdecl Run::Window::getGlfwWindow(void)" (?getGlfwWindow@Window@Run@@QEAAPEAUGLFWwindow@@XZ) referenced in function "public: __cdecl Run::Input::Input(class std::shared_ptr<class Run::Window>)" (??0Input@Run@@QEAA@V?$shared_ptr@VWindow@Run@@@std@@@Z)
+         RunGameEngine.lib(Gui.obj) : error LNK2001: unresolved external symbol "public: struct GLFWwindow * __cdecl Run::Window::getGlfwWindow(void)" (?getGlfwWindow@Window@Run@@QEAAPEAUGLFWwindow@@XZ)
+         RunGameEngine.lib(RunApplication.obj) : error LNK2019: unresolved external symbol "public: bool __cdecl Run::Window::shouldClose(void)" (?shouldClose@Window@Run@@QEAA_NXZ) referenced in function "public: void __cdecl Run::RunApplication::Loop(void)" (?Loop@RunApplication@Run@@QEAAXXZ)
+         C:\Users\imman\source\repos\RunGameEngine\Run\bin\Debug-x64\Application\Application.exe : fatal error LNK1120: 10 unresolved externals
+
+    10 Warning(s)
+    13 Error(s)
+
+Time Elapsed 00:00:01.44

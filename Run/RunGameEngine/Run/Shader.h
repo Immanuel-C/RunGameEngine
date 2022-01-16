@@ -2,17 +2,19 @@
 
 #include <string>
 
-class Shader
-{
-public:
-	Shader(std::string vertexShader, std::string fragmentShader);
+namespace Run {
 
-	std::string getVertexShader();
-	std::string getFragmentShader();
+	class Shader
+	{
+	public:
+		Shader(std::string vertexShader, std::string fragmentShader);
 
-private:
-	std::string m_vertexShader;
-	std::string m_fragmentShader;
+		std::string getVertexShader();
+		std::string getFragmentShader();
 
-};
+	private:
+		std::string m_vertexShader;
+		std::string m_fragmentShader;
 
+	};
+}
