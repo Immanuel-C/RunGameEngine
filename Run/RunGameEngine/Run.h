@@ -7,14 +7,6 @@
 #include "Run/SoundManager.h"
 #include "Run/TranslateInput.h"
 #include "Run/RunApplication.h"
-#include <Run/Gui.h>
-
 
 // Entry Point
-
 #include "Run/EntryPoint.h"
-
-// Dear ImGui
-#include <imgui.h>
-#include <imgui_impl_glfw.h>
-#include <imgui_impl_opengl3.h>
