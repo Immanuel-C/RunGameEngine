@@ -1,9 +1,9 @@
-﻿Build started 2022-01-23 12:40:58 AM.
+﻿Build started 2022-01-23 1:03:25 AM.
 Logging verbosity is set to: Normal.     1>Project "C:\Dev\RunGameEngine\Run\Application\Application.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(495,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
      1>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(496,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
      1>InitializeBuildStatus:
-         Touching "C:\Dev\RunGameEngine\Run\bin-int\Debug-x64\Application\Application.tlog\unsuccessfulbuild".
+         Creating "C:\Dev\RunGameEngine\Run\bin-int\Debug-x64\Application\Application.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\bin\HostX64\x64\CL.exe /c /IC:\Dev\RunGameEngine\Run\RunGameEngine /IC:\Dev\RunGameEngine\Run\Include\GLAD\include /IC:\Dev\RunGameEngine\Run\Include\IRRKLANG\include /IC:\Dev\RunGameEngine\Run\Include\STB /IC:\Dev\RunGameEngine\Run\Include\GLM /IC:\Dev\RunGameEngine\Run\Application\Glad /IC:\Dev\RunGameEngine\Run\Include\GLFW\include /ZI /JMC /nologo /W3 /WX- /diagnostics:column /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c++14 /permissive- /Fo"C:\Dev\RunGameEngine\Run\bin-int\Debug-x64\Application\\" /Fd"C:\Dev\RunGameEngine\Run\bin-int\Debug-x64\Application\vc143.pdb" /external:W3 /Gd /TP /FC /errorReport:prompt src\Application.cpp
          Application.cpp
@@ -70,4 +70,4 @@ Build succeeded.
     13 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.13
+Time Elapsed 00:00:01.14
