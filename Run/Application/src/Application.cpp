@@ -27,12 +27,22 @@ public:
         /// would get clipped out of our screen 
         camera.setPosition({0.0f, 0.0f, -1.0f});
 
+<<<<<<< HEAD
+=======
+       // soundManager->play("Res/Audio/getout.ogg");
+
+>>>>>>> 283dffbe78d40265fb3368f5e6f3dec5be39bd3f
         quad = renderer->createQuad(0.0f, { 600.0f, 300.0f, 0.0f }, { 100.0f, 100.0f }, Run::LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), Run::LoadFile::loadTexture("Res/Textures/Lake.jpg"));
     }
 
     const float MOVEMENT_SPEED = 1000.0f;
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> 283dffbe78d40265fb3368f5e6f3dec5be39bd3f
     /// <summary>
     /// The Update method is called after the start method and will be called every frame. Do not set the windowColor after you draw any shapes!
     /// </summary>
