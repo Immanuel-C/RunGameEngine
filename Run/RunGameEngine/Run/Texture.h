@@ -1,8 +1,11 @@
 #pragma once
 
+// Run
+#include "Core.h"
+
 namespace Run {
 
-	class Texture
+	class RUN_API Texture
 	{
 	public:
 		Texture(unsigned char* data, int width, int height, int nrChannels);

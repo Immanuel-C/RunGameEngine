@@ -1,5 +1,7 @@
 #include "Camera.h"
 
+
+
 namespace Run {
 
 	Camera::Camera(float left, float right, float bottom, float top)

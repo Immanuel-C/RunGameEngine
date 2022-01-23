@@ -10,10 +10,11 @@
 
 // Run
 #include "Window.h"
+#include "Core.h"
 
 namespace Run {
 
-	class Camera
+	class RUN_API Camera
 	{
 	public:
 		Camera(float left, float right, float bottom, float top);

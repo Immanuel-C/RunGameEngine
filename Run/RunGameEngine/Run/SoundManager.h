@@ -9,9 +9,12 @@
 //std
 #include <iostream>
 
+// Run
+#include "Core.h"
+
 namespace Run {
 
-	class SoundManager
+	class RUN_API SoundManager
 	{
 	public:
 		SoundManager();

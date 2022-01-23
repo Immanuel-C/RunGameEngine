@@ -9,23 +9,23 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-// My stuff
+// Run
 #include "Shape.h"
 #include "Texture.h"
 #include "Shader.h"
+#include "Core.h"
 
 // std
-#include <vector>
 #include <iostream>
 #include <array>
 
 namespace Run {
-	class Renderer
+	class RUN_API Renderer
 	{
 	public:
 		// You shoud not really use this method
 		// Shape createShape(std::vector<float> vertices, std::vector<unsigned int> indices, Shader shader, Texture texture); 
-		Shape createQuad(const glm::vec3& position, const glm::vec2& scale, Shader shader, Texture texture);
+		Shape createQuad(float rotation, const glm::vec3& position, const glm::vec2& scale, Shader shader, Texture texture);
 
 		void draw(Shape& shape);
 

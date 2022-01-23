@@ -89,7 +89,6 @@ namespace Run {
 
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
-        //glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
         /* Create a windowed mode window and its OpenGL context */
         m_window = glfwCreateWindow(w, h, title.c_str(), monitor, share);

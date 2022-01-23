@@ -1,6 +1,6 @@
 #include "RunApplication.h"
 
-//#define DEBUG 
+#include "Time.h"
 
 namespace Run {
 
@@ -11,7 +11,8 @@ namespace Run {
 
 	void RunApplication::Start()
 	{
-		window = std::make_shared<Window>(800, 600, "ERROR: DID NOT SET WINDOW IN START()", nullptr, nullptr, false);
+		window = std::make_unique<Window>(800, 600, "ERROR: DID NOT CREATE WINDOW IN Start()", nullptr, nullptr, false);
+		std::cout << "ERROR: DID NOT CREATE WINDOW IN Start()";
 	}
 
 	void RunApplication::Update(float dt)
@@ -21,21 +22,12 @@ namespace Run {
 
 	void RunApplication::Loop()
 	{
+		double dt;
 
-		float currentTime = 0.0f;
-		float dt;
-		float lastTime = 0.0f;
-		unsigned int counter = 0;
 		while (!window->shouldClose())
 		{
-			currentTime = glfwGetTime();
-			dt = currentTime - lastTime;
+			dt = Time::calculateDt();
 			Update(dt);
-#ifdef DEBUG  
-			unsigned int FPS = 1.0 / dt;
-			std::cout << "FPS: " << FPS << " Delta Time: " << dt << "\n";
-#endif // DEBUG 
-			lastTime = currentTime;
 		}
 	}
 

@@ -1,10 +1,14 @@
 #pragma once
 
+// Run
+#include "Core.h"
+
+// std
 #include <string>
 
 namespace Run {
 
-	class Shader
+	class RUN_API Shader
 	{
 	public:
 		Shader(std::string vertexShader, std::string fragmentShader);

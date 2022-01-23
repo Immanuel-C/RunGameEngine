@@ -1,11 +1,17 @@
 #pragma once
+
+// Run
 #include "Texture.h"
 #include "Shader.h"
+#include "Core.h"
+
+// std
 #include <fstream>
 #include <sstream>
 
+
 namespace Run {
-	class LoadFile
+	class RUN_API LoadFile
 	{
 	public:
 		static Texture loadTexture(const char* fileLocation);

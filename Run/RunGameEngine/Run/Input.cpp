@@ -19,8 +19,7 @@ namespace Run {
     glm::vec2 Input::m_mousePos;
     GLFWwindow* Input::m_window;
 
-
-    Input::Input(std::shared_ptr<Window>& window)
+    Input::Input()
     {
         int len = sizeof(m_keys) / sizeof(m_keys[0]);
         for (int i = 0; i < len; i++)
@@ -29,7 +28,7 @@ namespace Run {
         }
 
         m_mousePos = glm::vec2();
-        m_window = window->getGlfwWindow();
+        m_window = glfwGetCurrentContext();
 
         glfwSetWindowUserPointer(m_window, this);
 

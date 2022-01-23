@@ -3,12 +3,14 @@
 #include "Vector.h"
 #include <glm/vec2.hpp>
 
+#include "Core.h"
+
 namespace Run {
 
-	class Input
+	class RUN_API Input
 	{
 	public:
-		Input(std::shared_ptr<Window>& window);
+		Input();
 
 		static bool isKeyPressed(uint16_t key);
 		static bool isMouseButtonPressed(uint16_t button);

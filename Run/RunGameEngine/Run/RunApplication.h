@@ -1,10 +1,14 @@
 #pragma once
 
+// Run
 #include "Window.h"
+#include "Core.h"
+
+// std
 #include <string>
 
 namespace Run {
-	class RunApplication
+	class RUN_API RunApplication
 	{
 	public:
 		RunApplication();
@@ -15,6 +19,6 @@ namespace Run {
 
 		void Loop();
 
-		std::shared_ptr<Window> window;
+		std::unique_ptr<Window> window;
 	};
 }

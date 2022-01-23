@@ -1,0 +1,109 @@
+﻿Build started 2022-01-19 2:12:33 PM.
+Logging verbosity is set to: Normal.     1>Project "C:\Dev\RunGameEngine\Run\Application\Application.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(495,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+     1>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(496,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+     1>InitializeBuildStatus:
+         Creating "C:\Dev\RunGameEngine\Run\bin-int\Release-x64\Application\Application.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\bin\HostX64\x64\CL.exe /c /IC:\Dev\RunGameEngine\Run\Include\IMGUI\include /IC:\Dev\RunGameEngine\Run\RunGameEngine /IC:\Dev\RunGameEngine\Run\Include\GLAD\include /IC:\Dev\RunGameEngine\Run\Include\IRRKLANG\include /IC:\Dev\RunGameEngine\Run\Include\STB /IC:\Dev\RunGameEngine\Run\Include\GLM /IC:\Dev\RunGameEngine\Run\Application\Glad /IC:\Dev\RunGameEngine\Run\Include\GLFW\include /Zi /nologo /W3 /WX- /diagnostics:column /sdl /O2 /Oi /GL /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c++14 /permissive- /Fo"C:\Dev\RunGameEngine\Run\bin-int\Release-x64\Application\\" /Fd"C:\Dev\RunGameEngine\Run\bin-int\Release-x64\Application\vc143.pdb" /external:W3 /Gd /TP /FC /errorReport:prompt src\Application.cpp
+         Application.cpp
+     1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shader.h(20,15): warning C4251: 'Run::Shader::m_vertexShader': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Run::Shader'
+       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\xstring(4920): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+     1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shader.h(21,15): warning C4251: 'Run::Shader::m_fragmentShader': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Run::Shader'
+       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\xstring(4920): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+     1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Camera.h(44,13): warning C4251: 'Run::Camera::m_position': struct 'glm::vec<3,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Camera'
+       C:\Dev\RunGameEngine\Run\Include\GLM\glm\fwd.hpp(420): message : see declaration of 'glm::vec<3,float,glm::packed_highp>'
+     1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Camera.h(45,13): warning C4251: 'Run::Camera::m_projectionMat': struct 'glm::mat<4,4,glm::f32,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Camera'
+       C:\Dev\RunGameEngine\Run\Include\GLM\glm\fwd.hpp(520): message : see declaration of 'glm::mat<4,4,glm::f32,glm::packed_highp>'
+     1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Camera.h(46,13): warning C4251: 'Run::Camera::m_viewMat': struct 'glm::mat<4,4,glm::f32,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Camera'
+       C:\Dev\RunGameEngine\Run\Include\GLM\glm\fwd.hpp(520): message : see declaration of 'glm::mat<4,4,glm::f32,glm::packed_highp>'
+     1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shape.h(39,13): warning C4251: 'Run::Shape::m_modelMat': struct 'glm::mat<4,4,glm::f32,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Shape'
+       C:\Dev\RunGameEngine\Run\Include\GLM\glm\fwd.hpp(520): message : see declaration of 'glm::mat<4,4,glm::f32,glm::packed_highp>'
+     1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shape.h(40,13): warning C4251: 'Run::Shape::m_position': struct 'glm::vec<2,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Shape'
+       C:\Dev\RunGameEngine\Run\Include\GLM\glm\fwd.hpp(419): message : see declaration of 'glm::vec<2,float,glm::packed_highp>'
+     1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shape.h(41,13): warning C4251: 'Run::Shape::m_scale': struct 'glm::vec<2,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Shape'
+       C:\Dev\RunGameEngine\Run\Include\GLM\glm\fwd.hpp(419): message : see declaration of 'glm::vec<2,float,glm::packed_highp>'
+     1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Input.h(21,20): warning C4251: 'Run::Input::m_mousePos': struct 'glm::vec<2,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Input'
+       C:\Dev\RunGameEngine\Run\Include\GLM\glm\fwd.hpp(419): message : see declaration of 'glm::vec<2,float,glm::packed_highp>'
+     1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\RunApplication.h(22,27): warning C4251: 'Run::RunApplication::window': class 'std::shared_ptr<Run::Window>' needs to have dll-interface to be used by clients of class 'Run::RunApplication'
+       C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Input.h(13): message : see declaration of 'std::shared_ptr<Run::Window>'
+     1>C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\xutility(149,77): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+                 with
+                 [
+                     _Ty=int
+                 ]
+       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\memory(2003): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,int,int,const char(&)[24],nullptr,nullptr,bool>(_Ty &,int &&,int &&,const char (&)[24],nullptr &&,nullptr &&,bool &&) noexcept(false)' being compiled
+                 with
+                 [
+                     _Ty=Run::Window
+                 ]
+       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\memory(2722): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<int,int,const char(&)[24],nullptr,nullptr,bool>(int &&,int &&,const char (&)[24],nullptr &&,nullptr &&,bool &&)' being compiled
+                 with
+                 [
+                     _Ty=Run::Window
+                 ]
+       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\memory(2723): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<int,int,const char(&)[24],nullptr,nullptr,bool>(int &&,int &&,const char (&)[24],nullptr &&,nullptr &&,bool &&)' being compiled
+                 with
+                 [
+                     _Ty=Run::Window
+                 ]
+       C:\Dev\RunGameEngine\Run\Application\src\Application.cpp(19): message : see reference to function template instantiation 'std::shared_ptr<Run::Window> std::make_shared<Run::Window,int,int,const char(&)[24],nullptr,nullptr,bool>(int &&,int &&,const char (&)[24],nullptr &&,nullptr &&,bool &&)' being compiled
+       Link:
+         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\bin\HostX64\x64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Dev\RunGameEngine\Run\bin\Release-x64\Application\Application.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Dev\RunGameEngine\Run\Include\IMGUI /LIBPATH:C:\Dev\RunGameEngine\Run\Include\GLFW\lib /LIBPATH:C:\Dev\RunGameEngine\Run\Include\IRRKLANG\lib /LIBPATH:C:\Dev\RunGameEngine\Run\Include\RUN IMGUI.lib RunGameEngine.lib irrKlang.lib opengl32.lib glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Dev\RunGameEngine\Run\bin\Release-x64\Application\Application.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /LTCGOUT:"C:\Dev\RunGameEngine\Run\bin-int\Release-x64\Application\Application.iobj" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Dev\RunGameEngine\Run\bin\Release-x64\Application\Application.lib" /MACHINE:X64 "C:\Dev\RunGameEngine\Run\bin-int\Release-x64\Application\Application.obj"
+         "C:\Dev\RunGameEngine\Run\bin\Release-x64\RunGameEngine\RunGameEngine.lib"
+     1>IMGUI.lib(imgui.obj) : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:ICF' specification
+     1>LINK : warning LNK4098: defaultlib 'MSVCRTD' conflicts with use of other libs; use /NODEFAULTLIB:library
+         Generating code
+         1 of 152 functions ( 0.7%) were compiled, the rest were copied from previous compilation.
+           0 functions were new in current compilation
+           0 functions had inline decision re-evaluated but remain unchanged
+         Finished generating code
+     1>IMGUI.lib(imgui.obj) : warning LNK4099: PDB 'IMGUI.pdb' was not found with 'IMGUI.lib(imgui.obj)' or at 'C:\Dev\RunGameEngine\Run\bin\Release-x64\Application\IMGUI.pdb'; linking object as if no debug info
+     1>IMGUI.lib(imgui_widgets.obj) : warning LNK4099: PDB 'IMGUI.pdb' was not found with 'IMGUI.lib(imgui_widgets.obj)' or at 'C:\Dev\RunGameEngine\Run\bin\Release-x64\Application\IMGUI.pdb'; linking object as if no debug info
+     1>IMGUI.lib(imgui_draw.obj) : warning LNK4099: PDB 'IMGUI.pdb' was not found with 'IMGUI.lib(imgui_draw.obj)' or at 'C:\Dev\RunGameEngine\Run\bin\Release-x64\Application\IMGUI.pdb'; linking object as if no debug info
+     1>IMGUI.lib(imgui_tables.obj) : warning LNK4099: PDB 'IMGUI.pdb' was not found with 'IMGUI.lib(imgui_tables.obj)' or at 'C:\Dev\RunGameEngine\Run\bin\Release-x64\Application\IMGUI.pdb'; linking object as if no debug info
+         Application.vcxproj -> C:\Dev\RunGameEngine\Run\bin\Release-x64\Application\Application.exe
+       FinalizeBuildStatus:
+         Deleting file "C:\Dev\RunGameEngine\Run\bin-int\Release-x64\Application\Application.tlog\unsuccessfulbuild".
+         Touching "C:\Dev\RunGameEngine\Run\bin-int\Release-x64\Application\Application.tlog\Application.lastbuildstate".
+     1>Done Building Project "C:\Dev\RunGameEngine\Run\Application\Application.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+       "C:\Dev\RunGameEngine\Run\Application\Application.vcxproj" (Build target) (1) ->
+       (PrepareForBuild target) -> 
+         C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(495,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+
+
+       "C:\Dev\RunGameEngine\Run\Application\Application.vcxproj" (Build target) (1) ->
+         C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(496,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+
+
+       "C:\Dev\RunGameEngine\Run\Application\Application.vcxproj" (Build target) (1) ->
+       (ClCompile target) -> 
+         C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shader.h(20,15): warning C4251: 'Run::Shader::m_vertexShader': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Run::Shader'
+         C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shader.h(21,15): warning C4251: 'Run::Shader::m_fragmentShader': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Run::Shader'
+         C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Camera.h(44,13): warning C4251: 'Run::Camera::m_position': struct 'glm::vec<3,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Camera'
+         C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Camera.h(45,13): warning C4251: 'Run::Camera::m_projectionMat': struct 'glm::mat<4,4,glm::f32,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Camera'
+         C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Camera.h(46,13): warning C4251: 'Run::Camera::m_viewMat': struct 'glm::mat<4,4,glm::f32,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Camera'
+         C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shape.h(39,13): warning C4251: 'Run::Shape::m_modelMat': struct 'glm::mat<4,4,glm::f32,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Shape'
+         C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shape.h(40,13): warning C4251: 'Run::Shape::m_position': struct 'glm::vec<2,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Shape'
+         C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shape.h(41,13): warning C4251: 'Run::Shape::m_scale': struct 'glm::vec<2,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Shape'
+         C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Input.h(21,20): warning C4251: 'Run::Input::m_mousePos': struct 'glm::vec<2,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Input'
+         C:\Dev\RunGameEngine\Run\RunGameEngine\Run\RunApplication.h(22,27): warning C4251: 'Run::RunApplication::window': class 'std::shared_ptr<Run::Window>' needs to have dll-interface to be used by clients of class 'Run::RunApplication'
+         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\xutility(149,77): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+
+
+       "C:\Dev\RunGameEngine\Run\Application\Application.vcxproj" (Build target) (1) ->
+       (Link target) -> 
+         IMGUI.lib(imgui.obj) : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:ICF' specification
+         LINK : warning LNK4098: defaultlib 'MSVCRTD' conflicts with use of other libs; use /NODEFAULTLIB:library
+         IMGUI.lib(imgui.obj) : warning LNK4099: PDB 'IMGUI.pdb' was not found with 'IMGUI.lib(imgui.obj)' or at 'C:\Dev\RunGameEngine\Run\bin\Release-x64\Application\IMGUI.pdb'; linking object as if no debug info
+         IMGUI.lib(imgui_widgets.obj) : warning LNK4099: PDB 'IMGUI.pdb' was not found with 'IMGUI.lib(imgui_widgets.obj)' or at 'C:\Dev\RunGameEngine\Run\bin\Release-x64\Application\IMGUI.pdb'; linking object as if no debug info
+         IMGUI.lib(imgui_draw.obj) : warning LNK4099: PDB 'IMGUI.pdb' was not found with 'IMGUI.lib(imgui_draw.obj)' or at 'C:\Dev\RunGameEngine\Run\bin\Release-x64\Application\IMGUI.pdb'; linking object as if no debug info
+         IMGUI.lib(imgui_tables.obj) : warning LNK4099: PDB 'IMGUI.pdb' was not found with 'IMGUI.lib(imgui_tables.obj)' or at 'C:\Dev\RunGameEngine\Run\bin\Release-x64\Application\IMGUI.pdb'; linking object as if no debug info
+
+    19 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:05.28

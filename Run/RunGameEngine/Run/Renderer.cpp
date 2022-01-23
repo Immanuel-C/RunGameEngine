@@ -28,7 +28,7 @@ namespace Run {
 	}
 	*/
 
-	Shape Renderer::createQuad(const glm::vec3& position, const glm::vec2& scale, Shader shader, Texture texture)
+	Shape Renderer::createQuad(float rotation, const glm::vec3& position, const glm::vec2& scale, Shader shader, Texture texture)
 	{
 		float x = position.x;
 		float y = position.y;
@@ -70,7 +70,7 @@ namespace Run {
 		shape.setVAO(m_VAO);
 		shape.setTexture(m_texture);
 		shape.setPosition(position);
-		shape.setScale(scale);
+		shape.setRotation(rotation);
 		//shape.setScale(scale);
 
 		return shape;

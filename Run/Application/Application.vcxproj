@@ -61,14 +61,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Include\IMGUI\include;$(SolutionDir)RunGameEngine;$(SolutionDir)Include\GLAD\include;$(SolutionDir)Include\IRRKLANG\include;$(SolutionDir)Include\STB;$(SolutionDir)Include\GLM;$(ProjectDir)Glad;$(SolutionDir)Include\GLFW\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)RunGameEngine;$(SolutionDir)Include\GLAD\include;$(SolutionDir)Include\IRRKLANG\include;$(SolutionDir)Include\STB;$(SolutionDir)Include\GLM;$(ProjectDir)Glad;$(SolutionDir)Include\GLFW\include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Include\IMGUI;$(SolutionDir)Include\RUN\RunGameEngine;$(SolutionDir)Include\GLFW\lib;$(SolutionDir)Include\IRRKLANG\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>IMGUI.lib;RunGameEngine.lib;irrKlang.lib;opengl32.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Include\GLFW\lib;$(SolutionDir)Include\IRRKLANG\lib;$(SolutionDir)Include\RUN</AdditionalLibraryDirectories>
+      <AdditionalDependencies>RunGameEngine.lib;irrKlang.lib;opengl32.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -79,7 +79,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Include\IMGUI\include;$(SolutionDir)RunGameEngine;$(SolutionDir)Include\GLAD\include;$(SolutionDir)Include\IRRKLANG\include;$(SolutionDir)Include\STB;$(SolutionDir)Include\GLM;$(ProjectDir)Glad;$(SolutionDir)Include\GLFW\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)RunGameEngine;$(SolutionDir)Include\GLAD\include;$(SolutionDir)Include\IRRKLANG\include;$(SolutionDir)Include\STB;$(SolutionDir)Include\GLM;$(ProjectDir)Glad;$(SolutionDir)Include\GLFW\include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
@@ -87,8 +87,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Include\IMGUI;$(SolutionDir)Include\RUN\RunGameEngine;$(SolutionDir)Include\GLFW\lib;$(SolutionDir)Include\IRRKLANG\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>IMGUI.lib;RunGameEngine.lib;irrKlang.lib;opengl32.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Include\GLFW\lib;$(SolutionDir)Include\IRRKLANG\lib;$(SolutionDir)Include\RUN</AdditionalLibraryDirectories>
+      <AdditionalDependencies>RunGameEngine.lib;irrKlang.lib;opengl32.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -110,6 +110,11 @@
     <Image Include="Res\Textures\OtherWall.png" />
     <Image Include="Res\Textures\wall.jpg" />
     <Image Include="Res\Textures\WaterFall.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RunGameEngine\RunGameEngine.vcxproj">
+      <Project>{49b60dbc-e961-4452-a2e7-d3e0d0a4952d}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
