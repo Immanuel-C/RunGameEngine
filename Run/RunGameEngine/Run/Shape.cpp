@@ -72,12 +72,14 @@ namespace Run {
 		glUseProgram(m_shader);
 
 		glm::vec3 oldPosition = m_position;
-		m_position = { 0.0f, 0.0f, 0.0f };
+
+		setPosition({});
 
 		m_rotationDeg = rotationDeg;
 		recalculateMatrices();
 
 		setPosition(oldPosition);
+
 
 		glBindVertexArray(0);
 		glUseProgram(0);
@@ -85,12 +87,12 @@ namespace Run {
 
 	void Shape::setScale(const glm::vec2& scale)
 	{
-
 		glBindVertexArray(m_VAO);
 		glUseProgram(m_shader);
 
 		glm::vec3 oldPosition = m_position;
-		m_position = { 0.0f, 0.0f, 0.0f };
+
+		setPosition({});
 
 		m_scale = scale;
 		recalculateMatrices();
@@ -100,6 +102,7 @@ namespace Run {
 		glBindVertexArray(0);
 		glUseProgram(0);
 	}
+
 
 	void Shape::move(const glm::vec3& velocity)
 	{
@@ -129,9 +132,10 @@ namespace Run {
 
 	void Shape::recalculateMatrices()
 	{
-		m_modelMat = glm::translate(glm::mat4(1.0f), glm::vec3(m_position.x, m_position.y, m_position.z)) *
+		m_modelMat = 
+			glm::scale(glm::mat4(1.0f), glm::vec3(m_scale.x, m_scale.y, 1.0f)) *
 			glm::rotate(glm::mat4(1.0f), glm::radians(m_rotationDeg), glm::vec3(0.0f, 0.0f, 1.0f)) *
-			glm::scale(glm::mat4(1.0f), glm::vec3(m_scale.x, m_scale.y, 1.0f));
+			glm::translate(glm::mat4(1.0f), glm::vec3(m_position.x, m_position.y, m_position.z));
 		glUniformMatrix4fv(glGetUniformLocation(m_shader, "model"), 1, GL_FALSE, glm::value_ptr(m_modelMat));
 	}
 }

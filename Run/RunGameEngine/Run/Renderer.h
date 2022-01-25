@@ -11,6 +11,7 @@
 
 // Run
 #include "Shape.h"
+#include "Scene.h"
 #include "Texture.h"
 #include "Shader.h"
 #include "Core.h"
@@ -27,7 +28,7 @@ namespace Run {
 		// Shape createShape(std::vector<float> vertices, std::vector<unsigned int> indices, Shader shader, Texture texture); 
 		Shape createQuad(float rotation, const glm::vec3& position, const glm::vec2& scale, Shader shader, Texture texture);
 
-		void draw(Shape& shape);
+		void draw(Scene& scene);
 
 		void destroy();
 	private:

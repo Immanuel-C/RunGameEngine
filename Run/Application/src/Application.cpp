@@ -8,7 +8,14 @@ public:
 
     Run::Camera camera;
 
-    Run::Shape quad;
+    Run::Shape quad1;
+    Run::Shape quad2;
+    Run::Shape quad3;    
+    Run::Shape quad4;
+    Run::Shape quad5;
+    Run::Shape quad6;
+    
+    Run::Scene scene = Run::Scene(7);
 
     /// <summary>
     /// The start method is called before the Update method and is kind of like the constructor for the class
@@ -20,15 +27,27 @@ public:
         
         Run::Input::Input();
 
-        /// camera = Camera(-window->getWidth(), window->getWidth(), -window->getHeight(), window->getHeight());
-        camera = Run::Camera(0.0f, window->getWidth(), 0.0f, window->getHeight());
+
+        camera = Run::Camera(0.0f, window->getWidth(), 0.0f, window->getHeight(), 0.1f, 100.0f);
         /// We set the cameras's z position to -1 becuase all other objects z position is 0 so 
         /// the camera and the other objects would be in the same z position and the objects 
         /// would get clipped out of our screen 
         camera.setPosition({0.0f, 0.0f, -1.0f});
 
-
-        quad = renderer->createQuad(0.0f, { 600.0f, 300.0f, 0.0f }, { 100.0f, 100.0f }, Run::LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), Run::LoadFile::loadTexture("Res/Textures/Lake.jpg"));
+        quad1 = renderer->createQuad(0.0f, { 600.0f, 50.0f, 0.0f }, { 60.0f, 50.0f }, Run::LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), Run::LoadFile::loadTexture("Res/Textures/Lake.jpg"));
+        quad2 = renderer->createQuad(0.0f, { 250.0f, 25.0f, 0.0f }, { 60.0f, 50.0f }, Run::LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), Run::LoadFile::loadTexture("Res/Textures/Lake.jpg"));
+        quad3 = renderer->createQuad(0.0f, { 100.0f, 75.0f, 0.0f }, { 60.0f, 50.0f }, Run::LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), Run::LoadFile::loadTexture("Res/Textures/Lake.jpg"));
+        quad4 = renderer->createQuad(0.0f, { 400.0f, 50.0f, 0.0f }, { 60.0f, 50.0f }, Run::LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), Run::LoadFile::loadTexture("Res/Textures/Lake.jpg"));
+        quad5 = renderer->createQuad(0.0f, { 150.0f, 25.0f, 0.0f }, { 60.0f, 50.0f }, Run::LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), Run::LoadFile::loadTexture("Res/Textures/Lake.jpg"));
+        quad6 = renderer->createQuad(0.0f, { 100.0f, 250.0f, 0.0f }, { 60.0f, 50.0f }, Run::LoadFile::loadShader("Res/Shader/VertShader.glsl", "Res/Shader/FragShader.glsl"), Run::LoadFile::loadTexture("Res/Textures/Lake.jpg"));
+        
+        scene.pushBackShape(&quad1);
+        scene.pushBackShape(&quad2);
+        scene.pushBackShape(&quad3);
+        scene.pushBackShape(&quad4);
+        scene.pushBackShape(&quad5);
+        scene.pushBackShape(&quad6);
+    
     }
 
     const float MOVEMENT_SPEED = 1000.0f;
@@ -42,32 +61,29 @@ public:
     {
         window->setWindowColor(0.5f, 0.25f, 0.1f, 1.0f);
 
+        scene.setCamera(camera);
+
 
         if (Run::Input::isKeyPressed(Run::Keys::W) || Run::Input::isKeyPressed(Run::Keys::ArrowUp))
         {
-            quad.move({ 0.0f, MOVEMENT_SPEED * dt, 0.0f });
+            quad1.move({0.0f, MOVEMENT_SPEED * dt, 0.0f});
         }
         if (Run::Input::isKeyPressed(Run::Keys::A) || Run::Input::isKeyPressed(Run::Keys::ArrowLeft))
         {
-            quad.move({ -MOVEMENT_SPEED * dt, 0.0f, 0.0f });
+            quad1.move({ -MOVEMENT_SPEED * dt, 0.0f, 0.0f });
         }
         if (Run::Input::isKeyPressed(Run::Keys::S) || Run::Input::isKeyPressed(Run::Keys::ArrowDown))
         {
-            quad.move({ 0.0f, -MOVEMENT_SPEED * dt, 0.0f });
+            quad1.move({ 0.0f, -MOVEMENT_SPEED * dt, 0.0f });
         }
         if (Run::Input::isKeyPressed(Run::Keys::D) || Run::Input::isKeyPressed(Run::Keys::ArrowRight))
         {
-            quad.move({ MOVEMENT_SPEED * dt, 0.0f, 0.0f });
+            quad1.move({ MOVEMENT_SPEED * dt, 0.0f, 0.0f });
         }
-
-        //std::cout << "X: " << quad.getPosition().x << " Y: " << quad.getPosition().y << "\n";
-
-
+        
         // Render here:
-        //quad.setRotation(time(NULL) * dt);
 
-        quad.setCamera(camera);     
-        renderer->draw(quad);
+        renderer->draw(scene);
        
         window->doBackEndStuff();
     }

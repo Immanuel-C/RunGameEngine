@@ -122,10 +122,11 @@
     <ClCompile Include="Run\Input.cpp" />
     <ClCompile Include="Run\Shape.cpp" />
     <ClCompile Include="Run\Texture.cpp" />
-    <ClCompile Include="Run\Time.cpp" />
+    <ClCompile Include="Run\RunTime.cpp" />
     <ClCompile Include="Run\Window.cpp" />
     <ClCompile Include="Run\Shader.cpp" />
     <ClCompile Include="Run\SoundManager.cpp" />
+    <ClCompile Include="Run\Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Run\Core.h" />
@@ -142,7 +143,8 @@
     <ClInclude Include="Run\Window.h" />
     <ClInclude Include="Run\Shader.h" />
     <ClInclude Include="Run\SoundManager.h" />
-    <ClInclude Include="Run\Time.h" />
+    <ClInclude Include="Run\RunTime.h" />
+    <ClInclude Include="Run\Scene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -48,7 +48,10 @@
     <ClCompile Include="Run\Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Run\Time.cpp">
+    <ClCompile Include="Run\RunTime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Run\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -95,7 +98,10 @@
     <ClInclude Include="Run\Core.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Run\Time.h">
+    <ClInclude Include="Run\RunTime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Run\Scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -39,9 +39,9 @@ namespace Run {
 		std::array<float, 20> vertices =
 		{
 			x + width, y + height, z, 1.0f, 1.0f, // TR
-			x + width, y - height, z, 1.0f, 0.0f, // BR
-			x - width, y - height, z, 0.0f, 0.0f, // BL
-			x - width, y + height, z, 0.0f, 1.0f  // TL
+			x + width, y,		   z, 1.0f, 0.0f, // BR
+			x, y,				   z, 0.0f, 0.0f, // BL
+			x, y + height,		   z, 0.0f, 1.0f  // TL
 		};
 
 
@@ -69,22 +69,25 @@ namespace Run {
 		shape.setShader(m_shader);
 		shape.setVAO(m_VAO);
 		shape.setTexture(m_texture);
-		shape.setPosition(position);
-		shape.setRotation(rotation);
 		//shape.setScale(scale);
+		shape.setRotation(rotation);
+		shape.setPosition(position);
 
 		return shape;
 	}
 
-	void Renderer::draw(Shape& shape)
+	void Renderer::draw(Scene& scene)
 	{
-		// Unbinds any other shapes
-		glBindVertexArray(0);
-		glUseProgram(0);
-		shape.bindShader();
-		shape.bindVAO();
-		shape.bindTexture();
-		glDrawElements(GL_TRIANGLES, m_lenIndices, GL_UNSIGNED_BYTE, 0);
+		for (int i = 0; i < scene.getShapes().size(); i++)
+		{
+			glBindVertexArray(0);
+			glUseProgram(0);
+			scene.getShapes().data()[i]->setCamera(scene.getCamera());
+			scene.getShapes().data()[i]->bindShader();
+			scene.getShapes().data()[i]->bindVAO();
+			scene.getShapes().data()[i]->bindTexture();
+			glDrawElements(GL_TRIANGLES, m_lenIndices, GL_UNSIGNED_BYTE, 0);
+		}
 	}
 
 	void Renderer::destroy()

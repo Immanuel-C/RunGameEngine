@@ -1,8 +1,10 @@
 c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\vc143.pdb
 c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\vc143.idb
+c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\scene.obj
 c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\soundmanager.obj
 c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\shader.obj
 c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\window.obj
+c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\runtime.obj
 c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\texture.obj
 c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\shape.obj
 c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\input.obj
@@ -10,9 +12,7 @@ c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\renderer.obj
 c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\loadfile.obj
 c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\camera.obj
 c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\runapplication.obj
-c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\gui.obj
 c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\glad.obj
-c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\time.obj
 c:\dev\rungameengine\run\bin\debug-x64\rungameengine\rungameengine.dll
 c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\rungameengine.ilk
 c:\dev\rungameengine\run\bin\debug-x64\rungameengine\rungameengine.pdb
@@ -22,7 +22,6 @@ c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\rungameengine.vcxproj.f
 c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\rungameengine.tlog\cl.command.1.tlog
 c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\rungameengine.tlog\cl.read.1.tlog
 c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\rungameengine.tlog\cl.write.1.tlog
-c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\rungameengine.tlog\link.2348.delete.1.tlog
 c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\rungameengine.tlog\link.command.1.tlog
 c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\rungameengine.tlog\link.read.1.tlog
 c:\dev\rungameengine\run\bin-int\debug-x64\rungameengine\rungameengine.tlog\link.write.1.tlog

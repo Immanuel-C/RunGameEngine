@@ -7,6 +7,7 @@
 #include "Run/SoundManager.h"
 #include "Run/TranslateInput.h"
 #include "Run/RunApplication.h"
+#include "Run/Scene.h"
 
 // Entry Point
 #include "Run/EntryPoint.h"
