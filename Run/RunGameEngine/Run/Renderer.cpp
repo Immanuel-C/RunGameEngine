@@ -54,7 +54,6 @@ namespace Run {
 		m_lenVertices = vertices.size();
 		m_lenIndices = indices.size();
 
-
 		createVAO();
 		createVBO<vertices.size()>(vertices);
 		createEBO<indices.size()>(indices);
@@ -76,16 +75,66 @@ namespace Run {
 		return shape;
 	}
 
+	Shape* Renderer::createQuadHeap(float rotation, const glm::vec3& position, const glm::vec2& scale, Shader shader, Texture texture)
+	{
+		float x = position.x;
+		float y = position.y;
+		float z = position.z;
+		float width = scale.x;
+		float height = scale.y;
+
+		std::array<float, 20> vertices =
+		{
+			x + width, y + height, z, 1.0f, 1.0f, // TR
+			x + width, y,		   z, 1.0f, 0.0f, // BR
+			x, y,				   z, 0.0f, 0.0f, // BL
+			x, y + height,		   z, 0.0f, 1.0f  // TL
+		};
+
+
+		std::array<uint8_t, 6> indices =
+		{
+			0, 1, 3,
+			1, 2, 3
+		};
+
+		m_lenVertices = vertices.size();
+		m_lenIndices = indices.size();
+
+
+		createVAO();
+		createVBO<vertices.size()>(vertices);
+		createEBO<indices.size()>(indices);
+		createTexture(texture);
+		createShader(shader.getVertexShader(), shader.getFragmentShader());
+
+		Shape* shape = new Shape;
+
+		glm::mat4 model(1.0f);
+		glUniformMatrix4fv(glGetUniformLocation(m_shader, "model"), 1, GL_FALSE, glm::value_ptr(model));
+
+		shape->setShader(m_shader);
+		shape->setVAO(m_VAO);
+		shape->setTexture(m_texture);
+		//shape.setScale(scale);
+		shape->setRotation(rotation);
+		shape->setPosition(position);
+
+		return shape;
+	}
+
+	
+
 	void Renderer::draw(Scene& scene)
 	{
 		for (int i = 0; i < scene.getShapes().size(); i++)
 		{
 			glBindVertexArray(0);
 			glUseProgram(0);
-			scene.getShapes().data()[i]->setCamera(scene.getCamera());
-			scene.getShapes().data()[i]->bindShader();
-			scene.getShapes().data()[i]->bindVAO();
-			scene.getShapes().data()[i]->bindTexture();
+			scene.getShapes()[i]->setCamera(scene.getCamera());
+			scene.getShapes()[i]->bindShader();
+			scene.getShapes()[i]->bindVAO();
+			scene.getShapes()[i]->bindTexture();
 			glDrawElements(GL_TRIANGLES, m_lenIndices, GL_UNSIGNED_BYTE, 0);
 		}
 	}

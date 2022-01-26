@@ -1,32 +1,11 @@
-﻿Build started 2022-01-25 8:33:12 AM.
+﻿Build started 2022-01-26 2:45:02 AM.
 Logging verbosity is set to: Normal.     1>Project "C:\Dev\RunGameEngine\Run\RunGameEngine\RunGameEngine.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(495,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
      1>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(496,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
      1>InitializeBuildStatus:
          Creating "C:\Dev\RunGameEngine\Run\bin-int\Debug-x64\RunGameEngine\RunGameEngine.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\bin\HostX64\x64\CL.exe /c /IC:\Dev\RunGameEngine\Run\Include\IMGUI\include /IC:\Dev\RunGameEngine\Run\Include\GLAD\include /IC:\Dev\RunGameEngine\Run\Include\IRRKLANG\include /IC:\Dev\RunGameEngine\Run\Include\STB /IC:\Dev\RunGameEngine\Run\Include\GLM /IC:\Dev\RunGameEngine\Run\RunGameEngine\Glad /IC:\Dev\RunGameEngine\Run\Include\GLFW\include /ZI /JMC /nologo /W3 /WX- /diagnostics:column /sdl /Od /D RN_EXPORT /D _DEBUG /D _CONSOLE /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c++14 /permissive- /Fo"C:\Dev\RunGameEngine\Run\bin-int\Debug-x64\RunGameEngine\\" /Fd"C:\Dev\RunGameEngine\Run\bin-int\Debug-x64\RunGameEngine\vc143.pdb" /external:W3 /Gd /TP /FC /errorReport:prompt Run\Renderer.cpp Run\Scene.cpp
-         Renderer.cpp
-     1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shader.h(20,15): warning C4251: 'Run::Shader::m_vertexShader': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Run::Shader'
-       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\xstring(4920): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-     1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shader.h(21,15): warning C4251: 'Run::Shader::m_fragmentShader': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Run::Shader'
-       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\xstring(4920): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-     1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Camera.h(44,13): warning C4251: 'Run::Camera::m_position': struct 'glm::vec<3,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Camera'
-       C:\Dev\RunGameEngine\Run\Include\GLM\glm\fwd.hpp(420): message : see declaration of 'glm::vec<3,float,glm::packed_highp>'
-     1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Camera.h(45,13): warning C4251: 'Run::Camera::m_projectionMat': struct 'glm::mat<4,4,glm::f32,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Camera'
-       C:\Dev\RunGameEngine\Run\Include\GLM\glm\fwd.hpp(520): message : see declaration of 'glm::mat<4,4,glm::f32,glm::packed_highp>'
-     1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Camera.h(46,13): warning C4251: 'Run::Camera::m_viewMat': struct 'glm::mat<4,4,glm::f32,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Camera'
-       C:\Dev\RunGameEngine\Run\Include\GLM\glm\fwd.hpp(520): message : see declaration of 'glm::mat<4,4,glm::f32,glm::packed_highp>'
-     1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shape.h(42,13): warning C4251: 'Run::Shape::m_modelMat': struct 'glm::mat<4,4,glm::f32,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Shape'
-       C:\Dev\RunGameEngine\Run\Include\GLM\glm\fwd.hpp(520): message : see declaration of 'glm::mat<4,4,glm::f32,glm::packed_highp>'
-     1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shape.h(43,13): warning C4251: 'Run::Shape::m_position': struct 'glm::vec<3,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Shape'
-       C:\Dev\RunGameEngine\Run\Include\GLM\glm\fwd.hpp(420): message : see declaration of 'glm::vec<3,float,glm::packed_highp>'
-     1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shape.h(44,13): warning C4251: 'Run::Shape::m_scale': struct 'glm::vec<2,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Shape'
-       C:\Dev\RunGameEngine\Run\Include\GLM\glm\fwd.hpp(419): message : see declaration of 'glm::vec<2,float,glm::packed_highp>'
-     1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Scene.h(26,23): warning C4251: 'Run::Scene::m_listOfShapes': class 'std::vector<Run::Shape *,std::allocator<Run::Shape *>>' needs to have dll-interface to be used by clients of class 'Run::Scene'
-       C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Scene.h(20): message : see declaration of 'std::vector<Run::Shape *,std::allocator<Run::Shape *>>'
-     1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Renderer.cpp(54,34): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-     1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Renderer.cpp(55,32): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\bin\HostX64\x64\CL.exe /c /IC:\Dev\RunGameEngine\Run\Include\IMGUI\include /IC:\Dev\RunGameEngine\Run\Include\GLAD\include /IC:\Dev\RunGameEngine\Run\Include\IRRKLANG\include /IC:\Dev\RunGameEngine\Run\Include\STB /IC:\Dev\RunGameEngine\Run\Include\GLM /IC:\Dev\RunGameEngine\Run\RunGameEngine\Glad /IC:\Dev\RunGameEngine\Run\Include\GLFW\include /ZI /JMC /nologo /W3 /WX- /diagnostics:column /sdl /Od /D RN_EXPORT /D _DEBUG /D _CONSOLE /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c++14 /permissive- /Fo"C:\Dev\RunGameEngine\Run\bin-int\Debug-x64\RunGameEngine\\" /Fd"C:\Dev\RunGameEngine\Run\bin-int\Debug-x64\RunGameEngine\vc143.pdb" /external:W3 /Gd /TP /FC /errorReport:prompt Run\Scene.cpp
          Scene.cpp
      1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shader.h(20,15): warning C4251: 'Run::Shader::m_vertexShader': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Run::Shader'
        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include\xstring(4920): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
@@ -44,9 +23,8 @@ Logging verbosity is set to: Normal.     1>Project "C:\Dev\RunGameEngine\Run\Run
        C:\Dev\RunGameEngine\Run\Include\GLM\glm\fwd.hpp(420): message : see declaration of 'glm::vec<3,float,glm::packed_highp>'
      1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shape.h(44,13): warning C4251: 'Run::Shape::m_scale': struct 'glm::vec<2,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Shape'
        C:\Dev\RunGameEngine\Run\Include\GLM\glm\fwd.hpp(419): message : see declaration of 'glm::vec<2,float,glm::packed_highp>'
-     1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Scene.h(26,23): warning C4251: 'Run::Scene::m_listOfShapes': class 'std::vector<Run::Shape *,std::allocator<Run::Shape *>>' needs to have dll-interface to be used by clients of class 'Run::Scene'
+     1>C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Scene.h(28,23): warning C4251: 'Run::Scene::m_listOfShapes': class 'std::vector<Run::Shape *,std::allocator<Run::Shape *>>' needs to have dll-interface to be used by clients of class 'Run::Scene'
        C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Scene.h(20): message : see declaration of 'std::vector<Run::Shape *,std::allocator<Run::Shape *>>'
-         Generating Code...
          All outputs are up-to-date.
        Link:
          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\bin\HostX64\x64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Dev\RunGameEngine\Run\bin\Debug-x64\RunGameEngine\RunGameEngine.dll" /INCREMENTAL /ILK:"C:\Dev\RunGameEngine\Run\bin-int\Debug-x64\RunGameEngine\RunGameEngine.ilk" /NOLOGO /LIBPATH:C:\Dev\RunGameEngine\Run\Include\GLFW\lib /LIBPATH:C:\Dev\RunGameEngine\Run\Include\IRRKLANG\lib irrKlang.lib opengl32.lib glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Dev\RunGameEngine\Run\bin\Debug-x64\RunGameEngine\RunGameEngine.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Dev\RunGameEngine\Run\bin\Debug-x64\RunGameEngine\RunGameEngine.lib" /MACHINE:X64 /DLL "C:\Dev\RunGameEngine\Run\bin-int\Debug-x64\RunGameEngine\RunApplication.obj"
@@ -95,20 +73,9 @@ Build succeeded.
          C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shape.h(42,13): warning C4251: 'Run::Shape::m_modelMat': struct 'glm::mat<4,4,glm::f32,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Shape'
          C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shape.h(43,13): warning C4251: 'Run::Shape::m_position': struct 'glm::vec<3,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Shape'
          C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shape.h(44,13): warning C4251: 'Run::Shape::m_scale': struct 'glm::vec<2,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Shape'
-         C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Scene.h(26,23): warning C4251: 'Run::Scene::m_listOfShapes': class 'std::vector<Run::Shape *,std::allocator<Run::Shape *>>' needs to have dll-interface to be used by clients of class 'Run::Scene'
-         C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Renderer.cpp(54,34): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-         C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Renderer.cpp(55,32): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-         C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shader.h(20,15): warning C4251: 'Run::Shader::m_vertexShader': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Run::Shader'
-         C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shader.h(21,15): warning C4251: 'Run::Shader::m_fragmentShader': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Run::Shader'
-         C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Camera.h(44,13): warning C4251: 'Run::Camera::m_position': struct 'glm::vec<3,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Camera'
-         C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Camera.h(45,13): warning C4251: 'Run::Camera::m_projectionMat': struct 'glm::mat<4,4,glm::f32,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Camera'
-         C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Camera.h(46,13): warning C4251: 'Run::Camera::m_viewMat': struct 'glm::mat<4,4,glm::f32,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Camera'
-         C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shape.h(42,13): warning C4251: 'Run::Shape::m_modelMat': struct 'glm::mat<4,4,glm::f32,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Shape'
-         C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shape.h(43,13): warning C4251: 'Run::Shape::m_position': struct 'glm::vec<3,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Shape'
-         C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Shape.h(44,13): warning C4251: 'Run::Shape::m_scale': struct 'glm::vec<2,float,glm::packed_highp>' needs to have dll-interface to be used by clients of class 'Run::Shape'
-         C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Scene.h(26,23): warning C4251: 'Run::Scene::m_listOfShapes': class 'std::vector<Run::Shape *,std::allocator<Run::Shape *>>' needs to have dll-interface to be used by clients of class 'Run::Scene'
+         C:\Dev\RunGameEngine\Run\RunGameEngine\Run\Scene.h(28,23): warning C4251: 'Run::Scene::m_listOfShapes': class 'std::vector<Run::Shape *,std::allocator<Run::Shape *>>' needs to have dll-interface to be used by clients of class 'Run::Scene'
 
-    22 Warning(s)
+    11 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:02.23
+Time Elapsed 00:00:01.49

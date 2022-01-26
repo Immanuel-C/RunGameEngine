@@ -7,7 +7,7 @@ namespace Run
 		m_listOfShapes.reserve(size);
 	}
 
-	void Scene::pushBackShape(Shape* shape)
+	void Scene::addShape(Shape* shape)
 	{
 		m_listOfShapes.push_back(shape);
 	}
@@ -32,8 +32,13 @@ namespace Run
 	{
 		for (int i = 0; i < m_listOfShapes.size(); i)
 		{
-			m_listOfShapes.data()[i]->setCamera(m_camera); // Sets the shapes cameras
+			m_listOfShapes[i]->setCamera(m_camera); // Sets the shapes cameras
 		}
+	}
+
+	void Scene::destroy()
+	{
+		delete[] m_listOfShapes.data();
 	}
 
 }

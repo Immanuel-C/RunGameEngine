@@ -15,13 +15,15 @@ namespace Run
 	public:
 		Scene(size_t size = 5);
 
-		void pushBackShape(Shape* shape);
+		void addShape(Shape* shape);
 
 		std::vector<Shape*> getShapes();
 
 		void setCamera(Camera& camera);
 		Camera& getCamera();
 		void update();
+
+		void destroy();
 	private:
 		std::vector<Shape*> m_listOfShapes;
 		Camera m_camera;
