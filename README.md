@@ -4,17 +4,17 @@ A simple low level, single threaded game engine using OpenGL and GLFW for **Wind
 
 **Features:**
 
-- Texture Rendering with OpenGL
-- Cameras with OpenGL
-- Input with GLFW
-- Windowing System with GLFW
-- Audio with IrrKlang
+- Texture Rendering
+- Cameras with
+- Input
+- Windowing System
+- Audio
 
 If you find any bugs please report them using the issue tab
 
 **Requirments:**
 
-Run only supports graphics cards with the version 4.6 of OpenGL.
+Run only supports graphics cards with the version 4.6 of OpenGL and requires Windows for now.
 
 **How to build The Example Project:**
 
