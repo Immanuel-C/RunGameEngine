@@ -16,13 +16,13 @@ If you find any bugs please report them using the issue tab
 
 Run only supports graphics cards with the version 4.6 of OpenGL.
 
-**How to build:**
+**How to build The Example Project:**
 
 The Run game engine is using the **MSVC** compiler.
 
 **Make sure you have all the irrKlang and RunGameEngine .dll files and the Res folder in the Application build directory.** 
 
-To build, you need to make sure you **right click on the RunGameEngine project and then click build and then press run. Every time you change the files in the game engine you must do the previous instructions**. If you dont The .lib file and the header files may be mismatched and you will get a linking error.
+To build, just press run in visual studio.
 
 **Using The Run Binaries**
 
